@@ -1,0 +1,2 @@
+ALTER TABLE `agent_runs` ADD `unit_id` text DEFAULT 'UNIT-A' NOT NULL;--> statement-breakpoint
+CREATE UNIQUE INDEX `one_active_run_per_unit` ON `agent_runs` (`unit_id`) WHERE "agent_runs"."status" in ('ready', 'calling');

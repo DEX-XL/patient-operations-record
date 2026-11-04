@@ -1,0 +1,21 @@
+# Secrets: exception only for the empty, documented example.
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+private/
+node_modules/
+.next/
+out/
+.vercel/
+coverage/
+*.tsbuildinfo
+data/
+*.db
+*.db-*
+*.sqlite*
+*.log
+.DS_Store
+# B7 dataset unsealed after source freeze and raw hash verification.
+# Guardrails allow only its three frozen files; all other private data stays excluded.

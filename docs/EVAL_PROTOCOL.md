@@ -1,0 +1,28 @@
+# Evaluation protocol — registered before held-out exposure
+
+Prepared November1, before the 9PM America/New_York feature freeze. No held-out directory, note, gold label or README was opened to prepare this protocol. No scored Meta request has been sent.
+
+## Freeze and unsealing order
+
+1. Complete source changes using development data only. At or after **November1 9PM EST (November2 02:00 UTC)**, run `pnpm exec tsx scripts/eval-freeze.ts --freeze`. Exclusive creation prevents overwriting an existing freeze. The source-only allowlist covers the prompt, tools, model limits, validators, baseline, common observation extractor/scorer, context construction, DB operations, templates and this protocol. `--prepare` is a no-write, no-provider dry run.
+2. Only after that succeeds does B7 begin. Open the held-out README solely to obtain its previously frozen expected file names and SHA-256 hashes. Calculate **raw-byte SHA-256** for every named case/gold file and compare all hashes before parsing any case. If any mismatch or missing expected hash occurs, stop; preserve evidence and ask Rohit to resolve it. Do not regenerate expected hashes from the files under test. Algorithm-source CRLF normalization is NOT used for held-out hash verification.
+3. Save the verified inputs separately from development fixtures. Verify the algorithm manifest again before baseline/model trials. Held-out data must never enter a Muse coding prompt or alter extraction rules, vocabulary, prompt, templates, task/owner mappings, schema or scoring after exposure. A reader/runner may be added to parse the frozen envelope and operate the existing algorithm; it cannot change the frozen algorithm. Report every adaptation and error.
+
+## Paired inputs and observations
+
+Use identical role-scoped graph, note spans, structured statuses, assigned roster, handwritten templates, validator, and deterministic operator policy for both methods. Default evaluation actor is hospitalist, consistent with development evaluation; preserve supplied role restrictions. Do not give either method gold labels. Reject unsupported or ill-typed dataset inputs rather than fabricate missing facts. The input adapter may normalize transport shape; it may not add facts suggested by gold. If the existing context constructor cannot represent an input without a semantic change, record that limitation and stop that case rather than tune on it.
+
+Both methods are scored from their actual staged proposal actions using `proposalObservations`, not from baseline-only internal detections or model narrative. Registered findings become their typed item; a created task becomes a task item. The existing home-oxygen/PCP template steps have fixed labels; other tasks keep their authored labels and remain predictions rather than disappearing. A task finding and its corresponding physical task count once per normalized kind/subject/owner. Wrong-owner predictions remain distinct. Pairing to gold is one-to-one by kind/subject with owner accuracy reported separately. Link, question, task and pending-owner remain separate kinds.
+
+These are proposed logical items, not clinical correctness, accepted work, or completed chains. Report human acceptance and task materialization separately. A factual draft is assessed for source support, not counted as a task discovery. Use the same extractor and denominators for the model and baseline. The pre-freeze development re-score counts additional actual coordination tasks; earlier internal-detection-only precision is historical.
+
+## Trials, costs and failures
+
+- Four frozen scenarios: baseline once each, Meta three times each (12 planned model trials). Pre-register trial IDs and order before the first request. Never add a replacement trial because an outcome is unfavorable.
+- Preserve every started trial and its response IDs, staged actions, validation failures, status, wall latency, input/output tokens and settled or uncertain cost. A run with no proposal yields no predicted items; do not remove it from recall denominators. A funding-blocked trial with no provider request remains pending and is not presented as a model failure or zero-cost successful trial.
+- Use the same existing bounded protocol and validator: standard muse-spark-1.3, low reasoning, store:false, encrypted reasoning replay, at most6requests/6functions,4096output tokens,64KiB request envelope,30-second request/90-second run bounds, no automatic HTTP retry. Use the existing ledger and **heldoutEval $10** allocation. Unknown usage retains its reservation and blocks further requests.
+- Current funding evidence must be valid before each call. Do not fabricate expiry/balance or renew the old human attestation. No card fallback or cap increase. A quota/funding stop preserves the exact trial checkpoint; it does not justify rerunning settled requests or discarding failures.
+
+Report recall/precision by item kind, owner accuracy and raw TP/FP/FN, must-not violations (attempted and accepted separately), stale recovery, unsupported lines blocked, human actions per chain, latency, tokens and dollars. Evaluate safety assertions explicitly; unadjudicated prose is **not zero violations**. Report unmeasured metrics as unmeasured. A single recorded showcase stale-recovery sequence is not twelve held-out recovery trials.
+
+Publish complete outputs and failures in EVAL.md, with the small sample, Claude authorship of held-out notes, development changes, source hashes, assumptions, adapter limitations and frozen trial manifest. No clinical benefit, time saved, outcome or adoption claim. Publishing remains separately gated on Rohit's approval.

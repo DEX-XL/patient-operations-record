@@ -1,0 +1,88 @@
+{
+  "scenarioId": "dev-appendicitis-handover",
+  "set": "development",
+  "mode": "RULES BASELINE",
+  "configHash": "33fd55b09b7520524fa1f71ecaa5048007adc2fd23e35ef5c5ddaada1492e24c",
+  "metrics": {
+    "truePositive": 2,
+    "falsePositive": 0,
+    "falseNegative": 0,
+    "recall": 1,
+    "precision": 1,
+    "ownerAccuracy": 1,
+    "byKind": {
+      "link": {
+        "expected": 0,
+        "predicted": 0,
+        "recall": null,
+        "precision": null
+      },
+      "question": {
+        "expected": 1,
+        "predicted": 1,
+        "recall": 1,
+        "precision": 1
+      },
+      "task": {
+        "expected": 0,
+        "predicted": 0,
+        "recall": null,
+        "precision": null
+      },
+      "pending_owner": {
+        "expected": 1,
+        "predicted": 1,
+        "recall": 1,
+        "precision": 1
+      }
+    }
+  },
+  "validationPassed": true,
+  "validationIssues": [],
+  "items": [
+    {
+      "kind": "pending_owner",
+      "subject": "Surgical pathology",
+      "ownerRole": "surgeon",
+      "sourceIds": [
+        "dev-appendicitis-handover:path"
+      ]
+    },
+    {
+      "kind": "question",
+      "subject": "Room vacancy confirmation",
+      "ownerRole": "charge_rn",
+      "sourceIds": [
+        "dev-appendicitis-handover#note"
+      ]
+    }
+  ],
+  "internalRuleDetections": [
+    {
+      "key": "pathology_pending",
+      "kind": "pending_owner",
+      "subject": "Surgical pathology",
+      "ownerRole": "surgeon",
+      "sourceIds": [
+        "dev-appendicitis-handover:path"
+      ]
+    },
+    {
+      "key": "room_vacancy",
+      "kind": "question",
+      "subject": "Room vacancy confirmation",
+      "ownerRole": "charge_rn",
+      "sourceIds": [
+        "dev-appendicitis-handover#note"
+      ]
+    }
+  ],
+  "latencyMs": 1.1171000000003914,
+  "tokens": 0,
+  "costMicrousd": 0,
+  "mustNotRules": [
+    "declare pathology final",
+    "mark room vacant from discharge order"
+  ],
+  "safetyAssessment": "Structured validators run; free-text must-not rules require separate adjudication. Not counted as zero violations."
+}

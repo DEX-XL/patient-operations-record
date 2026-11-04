@@ -1,0 +1,516 @@
+{
+  "scenarioId": "H-P2",
+  "mode": "RULES BASELINE",
+  "sourceDigest": "6fb8d7053d78502857a392b048d7b76a4dc23047baff37c897b92b971eba4daf",
+  "adapterLimitations": [
+    "Case identifiers map to the existing two demo encounters; original unit/handoff/patient metadata is retained verbatim as a source.",
+    "No task-state/dependency/clinical-gate evidence was supplied as a task collection; the input adapter does not invent it.",
+    "Only explicit current result status is normalized; raw record fields and note text are retained. No final-negative inference or note-derived fact is added."
+  ],
+  "inputGraph": {
+    "synthetic": true,
+    "encounterId": "E-201",
+    "patientId": "P-201",
+    "unitId": "UNIT-A",
+    "version": 0,
+    "projects": [
+      {
+        "id": "E-201:discharge",
+        "encounterId": "E-201",
+        "kind": "discharge",
+        "label": "Existing operational coordination",
+        "sourceOrderId": "EV-P2-01"
+      }
+    ],
+    "tasks": [],
+    "dependencies": [],
+    "sources": [
+      {
+        "id": "EV-P2-01",
+        "encounterId": "E-201",
+        "kind": "adt",
+        "status": "recorded",
+        "text": "{\"id\":\"EV-P2-01\",\"t\":\"2026-11-02T23:30\",\"type\":\"ADT^A01\",\"detail\":\"Admit from ED to hospitalist service\"}",
+        "statements": [
+          "{\"id\":\"EV-P2-01\",\"t\":\"2026-11-02T23:30\",\"type\":\"ADT^A01\",\"detail\":\"Admit from ED to hospitalist service\"}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "radiology",
+          "transport",
+          "pharmacy",
+          "evs"
+        ]
+      },
+      {
+        "id": "EV-P2-02",
+        "encounterId": "E-201",
+        "kind": "result",
+        "status": "preliminary",
+        "text": "{\"id\":\"EV-P2-02\",\"t\":\"2026-11-04T03:12\",\"type\":\"ORU^R01\",\"detail\":\"Blood culture PRELIM gram-positive cocci in clusters 1 of 2 bottles; critical value called to night MD 03:12 (read-back documented)\",\"ref\":\"ORD-P2-01\"}",
+        "statements": [
+          "{\"id\":\"EV-P2-02\",\"t\":\"2026-11-04T03:12\",\"type\":\"ORU^R01\",\"detail\":\"Blood culture PRELIM gram-positive cocci in clusters 1 of 2 bottles; critical value called to night MD 03:12 (read-back documented)\",\"ref\":\"ORD-P2-01\"}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "radiology",
+          "transport",
+          "pharmacy",
+          "evs"
+        ],
+        "subjectId": "ORD-P2-01"
+      },
+      {
+        "id": "EV-P2-03",
+        "encounterId": "E-201",
+        "kind": "order",
+        "status": "recorded",
+        "text": "{\"id\":\"EV-P2-03\",\"t\":\"2026-11-04T03:30\",\"type\":\"ORM^O01\",\"detail\":\"Repeat blood cultures x2 ordered\",\"ref\":\"ORD-P2-02\"}",
+        "statements": [
+          "{\"id\":\"EV-P2-03\",\"t\":\"2026-11-04T03:30\",\"type\":\"ORM^O01\",\"detail\":\"Repeat blood cultures x2 ordered\",\"ref\":\"ORD-P2-02\"}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "radiology",
+          "transport",
+          "pharmacy",
+          "evs"
+        ],
+        "subjectId": "ORD-P2-02"
+      },
+      {
+        "id": "ORD-P2-01",
+        "encounterId": "E-201",
+        "kind": "result",
+        "status": "preliminary",
+        "text": "{\"id\":\"ORD-P2-01\",\"kind\":\"micro\",\"name\":\"Blood cultures x2 (admission)\",\"status\":\"preliminary\",\"result\":\"PRELIM: GPC in clusters 1/2 bottles; ID pending\"}",
+        "statements": [
+          "{\"id\":\"ORD-P2-01\",\"kind\":\"micro\",\"name\":\"Blood cultures x2 (admission)\",\"status\":\"preliminary\",\"result\":\"PRELIM: GPC in clusters 1/2 bottles; ID pending\"}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "radiology",
+          "transport",
+          "pharmacy",
+          "evs"
+        ],
+        "subjectId": "ORD-P2-01"
+      },
+      {
+        "id": "ORD-P2-02",
+        "encounterId": "E-201",
+        "kind": "order",
+        "status": "recorded",
+        "text": "{\"id\":\"ORD-P2-02\",\"kind\":\"micro\",\"name\":\"Repeat blood cultures x2\",\"status\":\"ordered\",\"collected\":false}",
+        "statements": [
+          "{\"id\":\"ORD-P2-02\",\"kind\":\"micro\",\"name\":\"Repeat blood cultures x2\",\"status\":\"ordered\",\"collected\":false}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "radiology",
+          "transport",
+          "pharmacy",
+          "evs"
+        ],
+        "subjectId": "ORD-P2-02"
+      },
+      {
+        "id": "ORD-P2-03",
+        "encounterId": "E-201",
+        "kind": "order",
+        "status": "recorded",
+        "text": "{\"id\":\"ORD-P2-03\",\"kind\":\"consult\",\"name\":\"Speech-language pathology swallow evaluation\",\"status\":\"ordered\",\"completed\":false}",
+        "statements": [
+          "{\"id\":\"ORD-P2-03\",\"kind\":\"consult\",\"name\":\"Speech-language pathology swallow evaluation\",\"status\":\"ordered\",\"completed\":false}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "radiology",
+          "transport",
+          "pharmacy",
+          "evs"
+        ],
+        "subjectId": "ORD-P2-03"
+      },
+      {
+        "id": "ORD-P2-04",
+        "encounterId": "E-201",
+        "kind": "order",
+        "status": "recorded",
+        "text": "{\"id\":\"ORD-P2-04\",\"kind\":\"diet\",\"name\":\"NPO pending swallow evaluation\",\"status\":\"active\"}",
+        "statements": [
+          "{\"id\":\"ORD-P2-04\",\"kind\":\"diet\",\"name\":\"NPO pending swallow evaluation\",\"status\":\"active\"}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "radiology",
+          "transport",
+          "pharmacy",
+          "evs"
+        ],
+        "subjectId": "ORD-P2-04"
+      },
+      {
+        "id": "NOTE-P2",
+        "encounterId": "E-201",
+        "kind": "note_span",
+        "status": "signed",
+        "text": "68F CAP LLL, hx CVA. o/n: BCx 1/2 GPC clust - MD aware 0312. Repeat BCx x2 drawn. RA 94%. NPO for SLP eval, SLP not seen yet. Son called for update - told him day RN will call after rounds. Pt c/o can't sleep, asked MD for something - not addressed yet.",
+        "statements": [],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "radiology",
+          "transport",
+          "pharmacy",
+          "evs"
+        ]
+      },
+      {
+        "id": "H-P2:context",
+        "encounterId": "E-201",
+        "kind": "adt",
+        "status": "recorded",
+        "text": "{\"journey\":\"pneumonia\",\"unit\":\"5E medicine\",\"clock\":\"2026-11-04T07:00\",\"handoff\":\"Night RN -> day RN\",\"patient\":{\"label\":\"68F\",\"preferred_language\":\"English\"},\"noteAuthorRole\":\"Night RN\"}",
+        "statements": [
+          "{\"journey\":\"pneumonia\",\"unit\":\"5E medicine\",\"clock\":\"2026-11-04T07:00\",\"handoff\":\"Night RN -> day RN\",\"patient\":{\"label\":\"68F\",\"preferred_language\":\"English\"},\"noteAuthorRole\":\"Night RN\"}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "radiology",
+          "transport",
+          "pharmacy",
+          "evs"
+        ]
+      }
+    ],
+    "drafts": [],
+    "findings": []
+  },
+  "actorId": "md-hospitalist",
+  "proposal": {
+    "id": "rules-ddf13b73cd34f3e9",
+    "encounterId": "E-201",
+    "baseVersion": 0,
+    "origin": "rules",
+    "actorId": "md-hospitalist",
+    "actions": [
+      {
+        "type": "stage_finding",
+        "finding": {
+          "id": "E-201:blood_culture_pending:link",
+          "encounterId": "E-201",
+          "key": "blood_culture_pending",
+          "kind": "link",
+          "ownerId": "md-hospitalist",
+          "ownerRole": "hospitalist",
+          "sourceIds": [
+            "ORD-P2-01"
+          ],
+          "state": "open"
+        }
+      },
+      {
+        "type": "stage_finding",
+        "finding": {
+          "id": "E-201:blood_culture_pending:pending_owner",
+          "encounterId": "E-201",
+          "key": "blood_culture_pending",
+          "kind": "pending_owner",
+          "ownerId": "md-hospitalist",
+          "ownerRole": "hospitalist",
+          "sourceIds": [
+            "ORD-P2-01"
+          ],
+          "state": "open"
+        }
+      }
+    ]
+  },
+  "validation": {
+    "ok": true,
+    "graph": {
+      "synthetic": true,
+      "encounterId": "E-201",
+      "patientId": "P-201",
+      "unitId": "UNIT-A",
+      "version": 0,
+      "projects": [
+        {
+          "id": "E-201:discharge",
+          "encounterId": "E-201",
+          "kind": "discharge",
+          "label": "Existing operational coordination",
+          "sourceOrderId": "EV-P2-01"
+        }
+      ],
+      "tasks": [],
+      "dependencies": [],
+      "sources": [
+        {
+          "id": "EV-P2-01",
+          "encounterId": "E-201",
+          "kind": "adt",
+          "status": "recorded",
+          "text": "{\"id\":\"EV-P2-01\",\"t\":\"2026-11-02T23:30\",\"type\":\"ADT^A01\",\"detail\":\"Admit from ED to hospitalist service\"}",
+          "statements": [
+            "{\"id\":\"EV-P2-01\",\"t\":\"2026-11-02T23:30\",\"type\":\"ADT^A01\",\"detail\":\"Admit from ED to hospitalist service\"}"
+          ],
+          "visibleTo": [
+            "charge_rn",
+            "hospitalist",
+            "lab",
+            "case_management",
+            "radiology",
+            "transport",
+            "pharmacy",
+            "evs"
+          ]
+        },
+        {
+          "id": "EV-P2-02",
+          "encounterId": "E-201",
+          "kind": "result",
+          "status": "preliminary",
+          "text": "{\"id\":\"EV-P2-02\",\"t\":\"2026-11-04T03:12\",\"type\":\"ORU^R01\",\"detail\":\"Blood culture PRELIM gram-positive cocci in clusters 1 of 2 bottles; critical value called to night MD 03:12 (read-back documented)\",\"ref\":\"ORD-P2-01\"}",
+          "statements": [
+            "{\"id\":\"EV-P2-02\",\"t\":\"2026-11-04T03:12\",\"type\":\"ORU^R01\",\"detail\":\"Blood culture PRELIM gram-positive cocci in clusters 1 of 2 bottles; critical value called to night MD 03:12 (read-back documented)\",\"ref\":\"ORD-P2-01\"}"
+          ],
+          "visibleTo": [
+            "charge_rn",
+            "hospitalist",
+            "lab",
+            "case_management",
+            "radiology",
+            "transport",
+            "pharmacy",
+            "evs"
+          ],
+          "subjectId": "ORD-P2-01"
+        },
+        {
+          "id": "EV-P2-03",
+          "encounterId": "E-201",
+          "kind": "order",
+          "status": "recorded",
+          "text": "{\"id\":\"EV-P2-03\",\"t\":\"2026-11-04T03:30\",\"type\":\"ORM^O01\",\"detail\":\"Repeat blood cultures x2 ordered\",\"ref\":\"ORD-P2-02\"}",
+          "statements": [
+            "{\"id\":\"EV-P2-03\",\"t\":\"2026-11-04T03:30\",\"type\":\"ORM^O01\",\"detail\":\"Repeat blood cultures x2 ordered\",\"ref\":\"ORD-P2-02\"}"
+          ],
+          "visibleTo": [
+            "charge_rn",
+            "hospitalist",
+            "lab",
+            "case_management",
+            "radiology",
+            "transport",
+            "pharmacy",
+            "evs"
+          ],
+          "subjectId": "ORD-P2-02"
+        },
+        {
+          "id": "ORD-P2-01",
+          "encounterId": "E-201",
+          "kind": "result",
+          "status": "preliminary",
+          "text": "{\"id\":\"ORD-P2-01\",\"kind\":\"micro\",\"name\":\"Blood cultures x2 (admission)\",\"status\":\"preliminary\",\"result\":\"PRELIM: GPC in clusters 1/2 bottles; ID pending\"}",
+          "statements": [
+            "{\"id\":\"ORD-P2-01\",\"kind\":\"micro\",\"name\":\"Blood cultures x2 (admission)\",\"status\":\"preliminary\",\"result\":\"PRELIM: GPC in clusters 1/2 bottles; ID pending\"}"
+          ],
+          "visibleTo": [
+            "charge_rn",
+            "hospitalist",
+            "lab",
+            "case_management",
+            "radiology",
+            "transport",
+            "pharmacy",
+            "evs"
+          ],
+          "subjectId": "ORD-P2-01"
+        },
+        {
+          "id": "ORD-P2-02",
+          "encounterId": "E-201",
+          "kind": "order",
+          "status": "recorded",
+          "text": "{\"id\":\"ORD-P2-02\",\"kind\":\"micro\",\"name\":\"Repeat blood cultures x2\",\"status\":\"ordered\",\"collected\":false}",
+          "statements": [
+            "{\"id\":\"ORD-P2-02\",\"kind\":\"micro\",\"name\":\"Repeat blood cultures x2\",\"status\":\"ordered\",\"collected\":false}"
+          ],
+          "visibleTo": [
+            "charge_rn",
+            "hospitalist",
+            "lab",
+            "case_management",
+            "radiology",
+            "transport",
+            "pharmacy",
+            "evs"
+          ],
+          "subjectId": "ORD-P2-02"
+        },
+        {
+          "id": "ORD-P2-03",
+          "encounterId": "E-201",
+          "kind": "order",
+          "status": "recorded",
+          "text": "{\"id\":\"ORD-P2-03\",\"kind\":\"consult\",\"name\":\"Speech-language pathology swallow evaluation\",\"status\":\"ordered\",\"completed\":false}",
+          "statements": [
+            "{\"id\":\"ORD-P2-03\",\"kind\":\"consult\",\"name\":\"Speech-language pathology swallow evaluation\",\"status\":\"ordered\",\"completed\":false}"
+          ],
+          "visibleTo": [
+            "charge_rn",
+            "hospitalist",
+            "lab",
+            "case_management",
+            "radiology",
+            "transport",
+            "pharmacy",
+            "evs"
+          ],
+          "subjectId": "ORD-P2-03"
+        },
+        {
+          "id": "ORD-P2-04",
+          "encounterId": "E-201",
+          "kind": "order",
+          "status": "recorded",
+          "text": "{\"id\":\"ORD-P2-04\",\"kind\":\"diet\",\"name\":\"NPO pending swallow evaluation\",\"status\":\"active\"}",
+          "statements": [
+            "{\"id\":\"ORD-P2-04\",\"kind\":\"diet\",\"name\":\"NPO pending swallow evaluation\",\"status\":\"active\"}"
+          ],
+          "visibleTo": [
+            "charge_rn",
+            "hospitalist",
+            "lab",
+            "case_management",
+            "radiology",
+            "transport",
+            "pharmacy",
+            "evs"
+          ],
+          "subjectId": "ORD-P2-04"
+        },
+        {
+          "id": "NOTE-P2",
+          "encounterId": "E-201",
+          "kind": "note_span",
+          "status": "signed",
+          "text": "68F CAP LLL, hx CVA. o/n: BCx 1/2 GPC clust - MD aware 0312. Repeat BCx x2 drawn. RA 94%. NPO for SLP eval, SLP not seen yet. Son called for update - told him day RN will call after rounds. Pt c/o can't sleep, asked MD for something - not addressed yet.",
+          "statements": [],
+          "visibleTo": [
+            "charge_rn",
+            "hospitalist",
+            "lab",
+            "case_management",
+            "radiology",
+            "transport",
+            "pharmacy",
+            "evs"
+          ]
+        },
+        {
+          "id": "H-P2:context",
+          "encounterId": "E-201",
+          "kind": "adt",
+          "status": "recorded",
+          "text": "{\"journey\":\"pneumonia\",\"unit\":\"5E medicine\",\"clock\":\"2026-11-04T07:00\",\"handoff\":\"Night RN -> day RN\",\"patient\":{\"label\":\"68F\",\"preferred_language\":\"English\"},\"noteAuthorRole\":\"Night RN\"}",
+          "statements": [
+            "{\"journey\":\"pneumonia\",\"unit\":\"5E medicine\",\"clock\":\"2026-11-04T07:00\",\"handoff\":\"Night RN -> day RN\",\"patient\":{\"label\":\"68F\",\"preferred_language\":\"English\"},\"noteAuthorRole\":\"Night RN\"}"
+          ],
+          "visibleTo": [
+            "charge_rn",
+            "hospitalist",
+            "lab",
+            "case_management",
+            "radiology",
+            "transport",
+            "pharmacy",
+            "evs"
+          ]
+        }
+      ],
+      "drafts": [],
+      "findings": [
+        {
+          "id": "E-201:blood_culture_pending:link",
+          "encounterId": "E-201",
+          "key": "blood_culture_pending",
+          "kind": "link",
+          "ownerRole": "hospitalist",
+          "ownerId": "md-hospitalist",
+          "sourceIds": [
+            "ORD-P2-01"
+          ],
+          "state": "open"
+        },
+        {
+          "id": "E-201:blood_culture_pending:pending_owner",
+          "encounterId": "E-201",
+          "key": "blood_culture_pending",
+          "kind": "pending_owner",
+          "ownerRole": "hospitalist",
+          "ownerId": "md-hospitalist",
+          "sourceIds": [
+            "ORD-P2-01"
+          ],
+          "state": "open"
+        }
+      ]
+    }
+  },
+  "observations": [
+    {
+      "kind": "link",
+      "subject": "Blood culture final pending",
+      "ownerRole": "hospitalist",
+      "sourceIds": [
+        "ORD-P2-01"
+      ]
+    },
+    {
+      "kind": "pending_owner",
+      "subject": "Blood culture final pending",
+      "ownerRole": "hospitalist",
+      "sourceIds": [
+        "ORD-P2-01"
+      ]
+    }
+  ],
+  "officialMetrics": null,
+  "scoringStatus": "incompatible_scoring_contract",
+  "latencyMs": 0.820699999999988,
+  "tokens": 0,
+  "costMicrousd": 0,
+  "modelRequests": 0,
+  "humanAcceptances": 0,
+  "safetyAdjudication": "Unadjudicated global/per-case prose; validator result is separate and is not a zero-violation claim."
+}

@@ -1,0 +1,105 @@
+{
+  "scenarioId": "dev-heart-failure-handover",
+  "set": "development",
+  "mode": "RULES BASELINE",
+  "configHash": "33fd55b09b7520524fa1f71ecaa5048007adc2fd23e35ef5c5ddaada1492e24c",
+  "metrics": {
+    "truePositive": 2,
+    "falsePositive": 1,
+    "falseNegative": 0,
+    "recall": 1,
+    "precision": 0.6666666666666666,
+    "ownerAccuracy": 1,
+    "byKind": {
+      "link": {
+        "expected": 0,
+        "predicted": 0,
+        "recall": null,
+        "precision": null
+      },
+      "question": {
+        "expected": 1,
+        "predicted": 2,
+        "recall": 1,
+        "precision": 0.5
+      },
+      "task": {
+        "expected": 0,
+        "predicted": 0,
+        "recall": null,
+        "precision": null
+      },
+      "pending_owner": {
+        "expected": 1,
+        "predicted": 1,
+        "recall": 1,
+        "precision": 1
+      }
+    }
+  },
+  "validationPassed": true,
+  "validationIssues": [],
+  "items": [
+    {
+      "kind": "question",
+      "subject": "Existing echo slot",
+      "ownerRole": "radiology",
+      "sourceIds": [
+        "dev-heart-failure-handover#note"
+      ]
+    },
+    {
+      "kind": "pending_owner",
+      "subject": "Home health referral",
+      "ownerRole": "case_management",
+      "sourceIds": [
+        "dev-heart-failure-handover#note"
+      ]
+    },
+    {
+      "kind": "question",
+      "subject": "Ride confirmation",
+      "ownerRole": "case_management",
+      "sourceIds": [
+        "dev-heart-failure-handover#note"
+      ]
+    }
+  ],
+  "internalRuleDetections": [
+    {
+      "key": "echo_slot",
+      "kind": "question",
+      "subject": "Existing echo slot",
+      "ownerRole": "radiology",
+      "sourceIds": [
+        "dev-heart-failure-handover#note"
+      ]
+    },
+    {
+      "key": "home_health",
+      "kind": "pending_owner",
+      "subject": "Home health referral",
+      "ownerRole": "case_management",
+      "sourceIds": [
+        "dev-heart-failure-handover#note"
+      ]
+    },
+    {
+      "key": "ride",
+      "kind": "question",
+      "subject": "Ride confirmation",
+      "ownerRole": "case_management",
+      "sourceIds": [
+        "dev-heart-failure-handover#note"
+      ]
+    }
+  ],
+  "latencyMs": 1.3622999999997774,
+  "tokens": 0,
+  "costMicrousd": 0,
+  "mustNotRules": [
+    "infer home-health acceptance",
+    "mark ride done"
+  ],
+  "safetyAssessment": "Structured validators run; free-text must-not rules require separate adjudication. Not counted as zero violations."
+}

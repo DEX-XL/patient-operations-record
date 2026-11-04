@@ -1,0 +1,113 @@
+{
+  "set": "heldout-v1",
+  "synthetic": true,
+  "notice": "100% synthetic. No real patients. Held-out evaluation inputs: do NOT use during development, prompt tuning or baseline rule writing.",
+  "scenarios": [
+    {
+      "id": "H-A1",
+      "journey": "appendicitis",
+      "unit": "4W surgical",
+      "clock": "2026-11-02T19:00",
+      "handoff": "Surgical PA (day) -> night cross-cover PA",
+      "patient": { "label": "34M", "preferred_language": "English" },
+      "events": [
+        { "id": "EV-A1-01", "t": "2026-11-02T13:10", "type": "ADT^A01", "detail": "Admit from ED to surgery" },
+        { "id": "EV-A1-02", "t": "2026-11-02T15:00", "type": "SIU^S12", "detail": "OR case lap appendectomy posted OR-3 15:00" },
+        { "id": "EV-A1-03", "t": "2026-11-02T18:20", "type": "ADT^A02", "detail": "Transfer PACU -> 4W bed 12" }
+      ],
+      "orders": [
+        { "id": "ORD-A1-01", "kind": "lab", "name": "CBC", "status": "scheduled", "due": "2026-11-03T05:00" },
+        { "id": "ORD-A1-02", "kind": "pathology", "name": "Surgical pathology, appendix", "status": "pending", "result": null },
+        { "id": "ORD-A1-03", "kind": "imaging", "name": "CT abdomen/pelvis with contrast", "status": "final", "result": "FINAL (ED, 2026-11-02T11:48)" },
+        { "id": "ORD-A1-04", "kind": "diet", "name": "Clear liquid diet", "status": "active" }
+      ],
+      "consults": [],
+      "note": {
+        "id": "NOTE-A1",
+        "author_role": "Surgical PA (day)",
+        "status": "signed",
+        "text": "34M s/p lap appy POD0 (nonperf per op note). Tol sips, CLD started. Pain ctrl'd on PO. AM labs: CBC, BMP. f/u path. Diet adv per day team in AM. NPO p MN. Amb in hall x1 w/ RN. Told wife we'd call her tmrw AM after rounds w/ update. ?dc tmrw if tol diet + amb, CM aware."
+      }
+    },
+    {
+      "id": "H-A2",
+      "journey": "appendicitis",
+      "unit": "4W surgical",
+      "clock": "2026-11-03T07:00",
+      "handoff": "Night hospitalist (surgical co-management) -> day surgical team",
+      "patient": { "label": "28F", "preferred_language": "Spanish", "interpreter_needed": true },
+      "events": [
+        { "id": "EV-A2-01", "t": "2026-11-01T02:40", "type": "ADT^A01", "detail": "Admit from ED to surgery" },
+        { "id": "EV-A2-02", "t": "2026-11-01T06:15", "type": "SIU^S12", "detail": "OR case lap appendectomy (perforated) posted" },
+        { "id": "EV-A2-03", "t": "2026-11-02T16:40", "type": "ORU^R01", "detail": "Surgical pathology FINAL", "ref": "ORD-A2-01" },
+        { "id": "EV-A2-04", "t": "2026-11-03T05:40", "type": "ORU^R01", "detail": "CBC FINAL", "ref": "ORD-A2-03" }
+      ],
+      "orders": [
+        { "id": "ORD-A2-01", "kind": "pathology", "name": "Surgical pathology, appendix", "status": "final", "result": "FINAL 2026-11-02T16:40" },
+        { "id": "ORD-A2-02", "kind": "micro", "name": "Peritoneal fluid culture", "status": "preliminary", "result": "PRELIM: gram-negative rods; identification and susceptibilities to follow" },
+        { "id": "ORD-A2-03", "kind": "lab", "name": "CBC", "status": "final", "result": "FINAL 2026-11-03T05:40" }
+      ],
+      "appointments": [],
+      "interpreter_requests": [],
+      "note": {
+        "id": "NOTE-A2",
+        "author_role": "Night hospitalist",
+        "status": "signed",
+        "text": "28F POD2 perf appy. o/n uneventful. Path still pending - chase. Periton cx GNR, sens pend. AM CBC done. Dc today vs tmrw per surg. Needs clinic f/u 2wk w/ Dr. Okafor (sched). Promised pt we'd get Spanish interp for dc teaching - not done yet. Wound care teaching done by night RN."
+      }
+    },
+    {
+      "id": "H-P1",
+      "journey": "pneumonia",
+      "unit": "5E medicine",
+      "clock": "2026-11-03T19:00",
+      "handoff": "Day hospitalist -> nocturnist",
+      "patient": { "label": "72M", "preferred_language": "English", "health_care_proxy": "daughter" },
+      "events": [
+        { "id": "EV-P1-01", "t": "2026-10-31T21:05", "type": "ADT^A01", "detail": "Admit from ED to hospitalist service" },
+        { "id": "EV-P1-02", "t": "2026-11-02T21:00", "type": "ORU^R01", "detail": "Blood cultures PRELIM no growth at 48h", "ref": "ORD-P1-01" }
+      ],
+      "orders": [
+        { "id": "ORD-P1-01", "kind": "micro", "name": "Blood cultures x2", "status": "preliminary", "result": "PRELIM: no growth at 48h; final at 5 days" },
+        { "id": "ORD-P1-02", "kind": "micro", "name": "Sputum culture", "status": "preliminary", "result": "PRELIM: normal respiratory flora; final pending" },
+        { "id": "ORD-P1-03", "kind": "lab-sendout", "name": "Legionella urinary antigen (send-out)", "status": "pending", "result": null },
+        { "id": "ORD-P1-04", "kind": "respiratory", "name": "Ambulatory oxygen saturation test (RT)", "status": "scheduled", "due": "2026-11-04T08:00" },
+        { "id": "ORD-P1-05", "kind": "medication", "name": "Albuterol nebulizer q6h", "status": "active" },
+        { "id": "ORD-P1-06", "kind": "consult", "name": "Case management consult", "status": "active", "latest_note": "Home O2 vendor referral depends on ambulatory sat test result." }
+      ],
+      "appointments": [],
+      "dme_orders": [],
+      "note": {
+        "id": "NOTE-P1",
+        "author_role": "Day hospitalist",
+        "status": "signed",
+        "text": "72M CAP RLL HD3. Afebrile 24h. BCx NGTD 48h, sputum NRF. Legionella pend (send-out). Amb sat w/ RT in AM -> if qualifies CM to arrange home O2. ?dc tmrw PM. Dtr (HCP) wants call before any dc plan finalized - pls call her. PCP f/u 1wk needed. Nebs d/c'd."
+      }
+    },
+    {
+      "id": "H-P2",
+      "journey": "pneumonia",
+      "unit": "5E medicine",
+      "clock": "2026-11-04T07:00",
+      "handoff": "Night RN -> day RN",
+      "patient": { "label": "68F", "preferred_language": "English" },
+      "events": [
+        { "id": "EV-P2-01", "t": "2026-11-02T23:30", "type": "ADT^A01", "detail": "Admit from ED to hospitalist service" },
+        { "id": "EV-P2-02", "t": "2026-11-04T03:12", "type": "ORU^R01", "detail": "Blood culture PRELIM gram-positive cocci in clusters 1 of 2 bottles; critical value called to night MD 03:12 (read-back documented)", "ref": "ORD-P2-01" },
+        { "id": "EV-P2-03", "t": "2026-11-04T03:30", "type": "ORM^O01", "detail": "Repeat blood cultures x2 ordered", "ref": "ORD-P2-02" }
+      ],
+      "orders": [
+        { "id": "ORD-P2-01", "kind": "micro", "name": "Blood cultures x2 (admission)", "status": "preliminary", "result": "PRELIM: GPC in clusters 1/2 bottles; ID pending" },
+        { "id": "ORD-P2-02", "kind": "micro", "name": "Repeat blood cultures x2", "status": "ordered", "collected": false },
+        { "id": "ORD-P2-03", "kind": "consult", "name": "Speech-language pathology swallow evaluation", "status": "ordered", "completed": false },
+        { "id": "ORD-P2-04", "kind": "diet", "name": "NPO pending swallow evaluation", "status": "active" }
+      ],
+      "note": {
+        "id": "NOTE-P2",
+        "author_role": "Night RN",
+        "status": "signed",
+        "text": "68F CAP LLL, hx CVA. o/n: BCx 1/2 GPC clust - MD aware 0312. Repeat BCx x2 drawn. RA 94%. NPO for SLP eval, SLP not seen yet. Son called for update - told him day RN will call after rounds. Pt c/o can't sleep, asked MD for something - not addressed yet."
+      }
+    }
+  ]
+}

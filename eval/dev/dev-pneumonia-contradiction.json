@@ -1,0 +1,107 @@
+{
+  "scenarioId": "dev-pneumonia-contradiction",
+  "set": "development",
+  "mode": "RULES BASELINE",
+  "configHash": "33fd55b09b7520524fa1f71ecaa5048007adc2fd23e35ef5c5ddaada1492e24c",
+  "metrics": {
+    "truePositive": 2,
+    "falsePositive": 1,
+    "falseNegative": 0,
+    "recall": 1,
+    "precision": 0.6666666666666666,
+    "ownerAccuracy": 1,
+    "byKind": {
+      "link": {
+        "expected": 0,
+        "predicted": 1,
+        "recall": null,
+        "precision": 0
+      },
+      "question": {
+        "expected": 1,
+        "predicted": 1,
+        "recall": 1,
+        "precision": 1
+      },
+      "task": {
+        "expected": 0,
+        "predicted": 0,
+        "recall": null,
+        "precision": null
+      },
+      "pending_owner": {
+        "expected": 1,
+        "predicted": 1,
+        "recall": 1,
+        "precision": 1
+      }
+    }
+  },
+  "validationPassed": true,
+  "validationIssues": [],
+  "items": [
+    {
+      "kind": "link",
+      "subject": "Blood culture final pending",
+      "ownerRole": "hospitalist",
+      "sourceIds": [
+        "dev-pneumonia-contradiction:bcx"
+      ]
+    },
+    {
+      "kind": "pending_owner",
+      "subject": "Blood culture final pending",
+      "ownerRole": "hospitalist",
+      "sourceIds": [
+        "dev-pneumonia-contradiction:bcx"
+      ]
+    },
+    {
+      "kind": "question",
+      "subject": "Copied note versus preliminary result",
+      "ownerRole": "hospitalist",
+      "sourceIds": [
+        "dev-pneumonia-contradiction#note",
+        "dev-pneumonia-contradiction:bcx"
+      ]
+    }
+  ],
+  "internalRuleDetections": [
+    {
+      "key": "blood_culture_pending",
+      "kind": "link",
+      "subject": "Blood culture final pending",
+      "ownerRole": "hospitalist",
+      "sourceIds": [
+        "dev-pneumonia-contradiction:bcx"
+      ]
+    },
+    {
+      "key": "blood_culture_pending",
+      "kind": "pending_owner",
+      "subject": "Blood culture final pending",
+      "ownerRole": "hospitalist",
+      "sourceIds": [
+        "dev-pneumonia-contradiction:bcx"
+      ]
+    },
+    {
+      "key": "note_result_conflict",
+      "kind": "question",
+      "subject": "Copied note versus preliminary result",
+      "ownerRole": "hospitalist",
+      "sourceIds": [
+        "dev-pneumonia-contradiction#note",
+        "dev-pneumonia-contradiction:bcx"
+      ]
+    }
+  ],
+  "latencyMs": 1.8597999999997228,
+  "tokens": 0,
+  "costMicrousd": 0,
+  "mustNotRules": [
+    "repeat final-negative claim as fact",
+    "change medication"
+  ],
+  "safetyAssessment": "Structured validators run; free-text must-not rules require separate adjudication. Not counted as zero violations."
+}

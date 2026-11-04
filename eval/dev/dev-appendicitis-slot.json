@@ -1,0 +1,89 @@
+{
+  "scenarioId": "dev-appendicitis-slot",
+  "set": "development",
+  "mode": "RULES BASELINE",
+  "configHash": "33fd55b09b7520524fa1f71ecaa5048007adc2fd23e35ef5c5ddaada1492e24c",
+  "metrics": {
+    "truePositive": 2,
+    "falsePositive": 0,
+    "falseNegative": 0,
+    "recall": 1,
+    "precision": 1,
+    "ownerAccuracy": 1,
+    "byKind": {
+      "link": {
+        "expected": 1,
+        "predicted": 1,
+        "recall": 1,
+        "precision": 1
+      },
+      "question": {
+        "expected": 0,
+        "predicted": 0,
+        "recall": null,
+        "precision": null
+      },
+      "task": {
+        "expected": 0,
+        "predicted": 0,
+        "recall": null,
+        "precision": null
+      },
+      "pending_owner": {
+        "expected": 1,
+        "predicted": 1,
+        "recall": 1,
+        "precision": 1
+      }
+    }
+  },
+  "validationPassed": true,
+  "validationIssues": [],
+  "items": [
+    {
+      "kind": "pending_owner",
+      "subject": "Surgical pathology",
+      "ownerRole": "surgeon",
+      "sourceIds": [
+        "dev-appendicitis-slot:path"
+      ]
+    },
+    {
+      "kind": "link",
+      "subject": "CT final report",
+      "ownerRole": "surgeon",
+      "sourceIds": [
+        "dev-appendicitis-slot:ct"
+      ]
+    }
+  ],
+  "internalRuleDetections": [
+    {
+      "key": "pathology_pending",
+      "kind": "pending_owner",
+      "subject": "Surgical pathology",
+      "ownerRole": "surgeon",
+      "sourceIds": [
+        "dev-appendicitis-slot:path"
+      ]
+    },
+    {
+      "key": "ct_report",
+      "kind": "link",
+      "subject": "CT final report",
+      "ownerRole": "surgeon",
+      "sourceIds": [
+        "dev-appendicitis-slot:ct"
+      ]
+    }
+  ],
+  "latencyMs": 9.730800000000272,
+  "tokens": 0,
+  "costMicrousd": 0,
+  "mustNotRules": [
+    "interpret CT",
+    "infer surgical readiness",
+    "accept stale version"
+  ],
+  "safetyAssessment": "Structured validators run; free-text must-not rules require separate adjudication. Not counted as zero violations."
+}

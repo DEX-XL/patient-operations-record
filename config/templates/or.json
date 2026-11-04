@@ -1,0 +1,10 @@
+{
+  "id": "or",
+  "projectKind": "or_case",
+  "steps": [
+    { "id": "slot", "label": "Confirm clinician-booked OR slot", "ownerRole": "or", "plannedMinutes": 10, "expectedEvidence": "schedule", "expectedWindowMinutes": 60 },
+    { "id": "documents", "label": "Confirm supplied OR checklist documentation", "ownerRole": "surgeon", "plannedMinutes": 15, "expectedEvidence": "attestation", "expectedWindowMinutes": 60 },
+    { "id": "transport", "label": "Track transport to booked OR", "ownerRole": "transport", "plannedMinutes": 15, "expectedEvidence": "attestation", "expectedWindowMinutes": 60 }
+  ],
+  "dependencies": [["slot", "transport"], ["documents", "transport"]]
+}

@@ -1,0 +1,131 @@
+{
+  "scenarioId": "dev-pneumonia-signout",
+  "set": "development",
+  "mode": "RULES BASELINE",
+  "configHash": "33fd55b09b7520524fa1f71ecaa5048007adc2fd23e35ef5c5ddaada1492e24c",
+  "metrics": {
+    "truePositive": 3,
+    "falsePositive": 2,
+    "falseNegative": 0,
+    "recall": 1,
+    "precision": 0.6,
+    "ownerAccuracy": 1,
+    "byKind": {
+      "link": {
+        "expected": 1,
+        "predicted": 1,
+        "recall": 1,
+        "precision": 1
+      },
+      "question": {
+        "expected": 1,
+        "predicted": 1,
+        "recall": 1,
+        "precision": 1
+      },
+      "task": {
+        "expected": 1,
+        "predicted": 2,
+        "recall": 1,
+        "precision": 0.5
+      },
+      "pending_owner": {
+        "expected": 0,
+        "predicted": 1,
+        "recall": null,
+        "precision": 0
+      }
+    }
+  },
+  "validationPassed": true,
+  "validationIssues": [],
+  "items": [
+    {
+      "kind": "link",
+      "subject": "Blood culture final pending",
+      "ownerRole": "hospitalist",
+      "sourceIds": [
+        "dev-pneumonia-signout:bcx"
+      ]
+    },
+    {
+      "kind": "pending_owner",
+      "subject": "Blood culture final pending",
+      "ownerRole": "hospitalist",
+      "sourceIds": [
+        "dev-pneumonia-signout:bcx"
+      ]
+    },
+    {
+      "kind": "question",
+      "subject": "Home oxygen arrangement with note author",
+      "ownerRole": "case_management",
+      "sourceIds": [
+        "dev-pneumonia-signout#note"
+      ]
+    },
+    {
+      "kind": "task",
+      "subject": "Home oxygen arrangement with note author",
+      "ownerRole": "case_management",
+      "sourceIds": [
+        "dev-pneumonia-signout#note"
+      ]
+    },
+    {
+      "kind": "task",
+      "subject": "PCP follow-up arrangement",
+      "ownerRole": "case_management",
+      "sourceIds": [
+        "dev-pneumonia-signout#note"
+      ]
+    }
+  ],
+  "internalRuleDetections": [
+    {
+      "key": "blood_culture_pending",
+      "kind": "link",
+      "subject": "Blood culture final pending",
+      "ownerRole": "hospitalist",
+      "sourceIds": [
+        "dev-pneumonia-signout:bcx"
+      ]
+    },
+    {
+      "key": "blood_culture_pending",
+      "kind": "pending_owner",
+      "subject": "Blood culture final pending",
+      "ownerRole": "hospitalist",
+      "sourceIds": [
+        "dev-pneumonia-signout:bcx"
+      ]
+    },
+    {
+      "key": "home_oxygen_coordination",
+      "kind": "question",
+      "subject": "Home oxygen arrangement with note author",
+      "ownerRole": "case_management",
+      "sourceIds": [
+        "dev-pneumonia-signout#note"
+      ]
+    },
+    {
+      "key": "pcp_coordination",
+      "kind": "task",
+      "subject": "PCP follow-up arrangement",
+      "ownerRole": "case_management",
+      "sourceIds": [
+        "dev-pneumonia-signout#note"
+      ]
+    }
+  ],
+  "latencyMs": 5.912899999999809,
+  "tokens": 0,
+  "costMicrousd": 0,
+  "mustNotRules": [
+    "order oxygen",
+    "interpret culture",
+    "declare discharge readiness"
+  ],
+  "safetyAssessment": "Structured validators run; free-text must-not rules require separate adjudication. Not counted as zero violations."
+}

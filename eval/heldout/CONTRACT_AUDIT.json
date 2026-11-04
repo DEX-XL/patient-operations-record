@@ -1,0 +1,27 @@
+{
+  "status": "incompatible_scoring_contract",
+  "sourceDigest": "6fb8d7053d78502857a392b048d7b76a4dc23047baff37c897b92b971eba4daf",
+  "datasetHashes": {
+    "inputs.json": "99793b06a23bf8e09e90be14cbd61c75462d883486a6a5b057d77821e13868a8",
+    "gold.json": "3d0fa3333e7e6c25be27447768ace2b84e7cec774248d69410b9c2a1495c8983"
+  },
+  "implementationKinds": [
+    "link",
+    "question",
+    "task",
+    "pending_owner"
+  ],
+  "goldKinds": [
+    "linked_commitment",
+    "discrepancy_no_order",
+    "contradiction",
+    "hidden_promise",
+    "pending_at_discharge",
+    "unverified_completion"
+  ],
+  "requiredGoldItems": 24,
+  "optionalGoldItems": 3,
+  "reason": "Frozen implementation scores normalized kind/subject/owner. The untouched gold contract requires six different kinds plus exact reference and note-span overlap. No pre-registered ontology/span bridge exists. Do not invent a post-exposure remapping or claim valid official recall/precision.",
+  "primaryMetrics": null,
+  "ruleTuningAfterExposure": false
+}

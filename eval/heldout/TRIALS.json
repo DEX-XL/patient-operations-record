@@ -1,0 +1,78 @@
+{
+  "createdAt": "2026-11-04T01:46:20.082Z",
+  "sourceDigest": "6fb8d7053d78502857a392b048d7b76a4dc23047baff37c897b92b971eba4daf",
+  "trials": [
+    {
+      "id": "b7-H-A1-1",
+      "scenarioId": "H-A1",
+      "repetition": 1,
+      "status": "pending_funding"
+    },
+    {
+      "id": "b7-H-A1-2",
+      "scenarioId": "H-A1",
+      "repetition": 2,
+      "status": "pending_funding"
+    },
+    {
+      "id": "b7-H-A1-3",
+      "scenarioId": "H-A1",
+      "repetition": 3,
+      "status": "pending_funding"
+    },
+    {
+      "id": "b7-H-A2-1",
+      "scenarioId": "H-A2",
+      "repetition": 1,
+      "status": "pending_funding"
+    },
+    {
+      "id": "b7-H-A2-2",
+      "scenarioId": "H-A2",
+      "repetition": 2,
+      "status": "pending_funding"
+    },
+    {
+      "id": "b7-H-A2-3",
+      "scenarioId": "H-A2",
+      "repetition": 3,
+      "status": "pending_funding"
+    },
+    {
+      "id": "b7-H-P1-1",
+      "scenarioId": "H-P1",
+      "repetition": 1,
+      "status": "pending_funding"
+    },
+    {
+      "id": "b7-H-P1-2",
+      "scenarioId": "H-P1",
+      "repetition": 2,
+      "status": "pending_funding"
+    },
+    {
+      "id": "b7-H-P1-3",
+      "scenarioId": "H-P1",
+      "repetition": 3,
+      "status": "pending_funding"
+    },
+    {
+      "id": "b7-H-P2-1",
+      "scenarioId": "H-P2",
+      "repetition": 1,
+      "status": "pending_funding"
+    },
+    {
+      "id": "b7-H-P2-2",
+      "scenarioId": "H-P2",
+      "repetition": 2,
+      "status": "pending_funding"
+    },
+    {
+      "id": "b7-H-P2-3",
+      "scenarioId": "H-P2",
+      "repetition": 3,
+      "status": "pending_funding"
+    }
+  ]
+}

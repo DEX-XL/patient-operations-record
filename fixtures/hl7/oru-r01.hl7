@@ -1,0 +1,5 @@
+MSH|^~\&|SYNTHETIC_DEMO|DEMO|REPLAY|DEMO|20261029070000||ORU^R01|sample-preliminary|T|2.5.1
+PID|1||P-101^^^SYNTHETIC
+PV1||I|UNIT-A^101||||||||||||||||E-101
+OBR|1||existing-order
+OBX|1|TX|BCX^Synthetic blood culture||Preliminary status; final report pending||||||P

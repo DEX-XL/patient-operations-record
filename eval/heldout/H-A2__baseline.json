@@ -1,0 +1,289 @@
+{
+  "scenarioId": "H-A2",
+  "mode": "RULES BASELINE",
+  "sourceDigest": "6fb8d7053d78502857a392b048d7b76a4dc23047baff37c897b92b971eba4daf",
+  "adapterLimitations": [
+    "Case identifiers map to the existing two demo encounters; original unit/handoff/patient metadata is retained verbatim as a source.",
+    "No task-state/dependency/clinical-gate evidence was supplied as a task collection; the input adapter does not invent it.",
+    "Only explicit current result status is normalized; raw record fields and note text are retained. No final-negative inference or note-derived fact is added."
+  ],
+  "inputGraph": {
+    "synthetic": true,
+    "encounterId": "E-101",
+    "patientId": "P-101",
+    "unitId": "UNIT-A",
+    "version": 0,
+    "projects": [
+      {
+        "id": "E-101:discharge",
+        "encounterId": "E-101",
+        "kind": "discharge",
+        "label": "Existing operational coordination",
+        "sourceOrderId": "EV-A2-01"
+      }
+    ],
+    "tasks": [],
+    "dependencies": [],
+    "sources": [
+      {
+        "id": "EV-A2-01",
+        "encounterId": "E-101",
+        "kind": "adt",
+        "status": "recorded",
+        "text": "{\"id\":\"EV-A2-01\",\"t\":\"2026-11-01T02:40\",\"type\":\"ADT^A01\",\"detail\":\"Admit from ED to surgery\"}",
+        "statements": [
+          "{\"id\":\"EV-A2-01\",\"t\":\"2026-11-01T02:40\",\"type\":\"ADT^A01\",\"detail\":\"Admit from ED to surgery\"}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "surgeon",
+          "radiology",
+          "transport",
+          "or",
+          "pharmacy",
+          "evs"
+        ]
+      },
+      {
+        "id": "EV-A2-02",
+        "encounterId": "E-101",
+        "kind": "schedule",
+        "status": "recorded",
+        "text": "{\"id\":\"EV-A2-02\",\"t\":\"2026-11-01T06:15\",\"type\":\"SIU^S12\",\"detail\":\"OR case lap appendectomy (perforated) posted\"}",
+        "statements": [
+          "{\"id\":\"EV-A2-02\",\"t\":\"2026-11-01T06:15\",\"type\":\"SIU^S12\",\"detail\":\"OR case lap appendectomy (perforated) posted\"}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "surgeon",
+          "radiology",
+          "transport",
+          "or",
+          "pharmacy",
+          "evs"
+        ]
+      },
+      {
+        "id": "EV-A2-03",
+        "encounterId": "E-101",
+        "kind": "result",
+        "status": "final",
+        "text": "{\"id\":\"EV-A2-03\",\"t\":\"2026-11-02T16:40\",\"type\":\"ORU^R01\",\"detail\":\"Surgical pathology FINAL\",\"ref\":\"ORD-A2-01\"}",
+        "statements": [
+          "{\"id\":\"EV-A2-03\",\"t\":\"2026-11-02T16:40\",\"type\":\"ORU^R01\",\"detail\":\"Surgical pathology FINAL\",\"ref\":\"ORD-A2-01\"}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "surgeon",
+          "radiology",
+          "transport",
+          "or",
+          "pharmacy",
+          "evs"
+        ],
+        "subjectId": "ORD-A2-01"
+      },
+      {
+        "id": "EV-A2-04",
+        "encounterId": "E-101",
+        "kind": "result",
+        "status": "final",
+        "text": "{\"id\":\"EV-A2-04\",\"t\":\"2026-11-03T05:40\",\"type\":\"ORU^R01\",\"detail\":\"CBC FINAL\",\"ref\":\"ORD-A2-03\"}",
+        "statements": [
+          "{\"id\":\"EV-A2-04\",\"t\":\"2026-11-03T05:40\",\"type\":\"ORU^R01\",\"detail\":\"CBC FINAL\",\"ref\":\"ORD-A2-03\"}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "surgeon",
+          "radiology",
+          "transport",
+          "or",
+          "pharmacy",
+          "evs"
+        ],
+        "subjectId": "ORD-A2-03"
+      },
+      {
+        "id": "ORD-A2-01",
+        "encounterId": "E-101",
+        "kind": "result",
+        "status": "final",
+        "text": "{\"id\":\"ORD-A2-01\",\"kind\":\"pathology\",\"name\":\"Surgical pathology, appendix\",\"status\":\"final\",\"result\":\"FINAL 2026-11-02T16:40\"}",
+        "statements": [
+          "{\"id\":\"ORD-A2-01\",\"kind\":\"pathology\",\"name\":\"Surgical pathology, appendix\",\"status\":\"final\",\"result\":\"FINAL 2026-11-02T16:40\"}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "surgeon",
+          "radiology",
+          "transport",
+          "or",
+          "pharmacy",
+          "evs"
+        ],
+        "subjectId": "ORD-A2-01"
+      },
+      {
+        "id": "ORD-A2-02",
+        "encounterId": "E-101",
+        "kind": "result",
+        "status": "preliminary",
+        "text": "{\"id\":\"ORD-A2-02\",\"kind\":\"micro\",\"name\":\"Peritoneal fluid culture\",\"status\":\"preliminary\",\"result\":\"PRELIM: gram-negative rods; identification and susceptibilities to follow\"}",
+        "statements": [
+          "{\"id\":\"ORD-A2-02\",\"kind\":\"micro\",\"name\":\"Peritoneal fluid culture\",\"status\":\"preliminary\",\"result\":\"PRELIM: gram-negative rods; identification and susceptibilities to follow\"}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "surgeon",
+          "radiology",
+          "transport",
+          "or",
+          "pharmacy",
+          "evs"
+        ],
+        "subjectId": "ORD-A2-02"
+      },
+      {
+        "id": "ORD-A2-03",
+        "encounterId": "E-101",
+        "kind": "result",
+        "status": "final",
+        "text": "{\"id\":\"ORD-A2-03\",\"kind\":\"lab\",\"name\":\"CBC\",\"status\":\"final\",\"result\":\"FINAL 2026-11-03T05:40\"}",
+        "statements": [
+          "{\"id\":\"ORD-A2-03\",\"kind\":\"lab\",\"name\":\"CBC\",\"status\":\"final\",\"result\":\"FINAL 2026-11-03T05:40\"}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "surgeon",
+          "radiology",
+          "transport",
+          "or",
+          "pharmacy",
+          "evs"
+        ],
+        "subjectId": "ORD-A2-03"
+      },
+      {
+        "id": "NOTE-A2",
+        "encounterId": "E-101",
+        "kind": "note_span",
+        "status": "signed",
+        "text": "28F POD2 perf appy. o/n uneventful. Path still pending - chase. Periton cx GNR, sens pend. AM CBC done. Dc today vs tmrw per surg. Needs clinic f/u 2wk w/ Dr. Okafor (sched). Promised pt we'd get Spanish interp for dc teaching - not done yet. Wound care teaching done by night RN.",
+        "statements": [],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "surgeon",
+          "radiology",
+          "transport",
+          "or",
+          "pharmacy",
+          "evs"
+        ]
+      },
+      {
+        "id": "H-A2:context",
+        "encounterId": "E-101",
+        "kind": "adt",
+        "status": "recorded",
+        "text": "{\"journey\":\"appendicitis\",\"unit\":\"4W surgical\",\"clock\":\"2026-11-03T07:00\",\"handoff\":\"Night hospitalist (surgical co-management) -> day surgical team\",\"patient\":{\"label\":\"28F\",\"preferred_language\":\"Spanish\",\"interpreter_needed\":true},\"noteAuthorRole\":\"Night hospitalist\"}",
+        "statements": [
+          "{\"journey\":\"appendicitis\",\"unit\":\"4W surgical\",\"clock\":\"2026-11-03T07:00\",\"handoff\":\"Night hospitalist (surgical co-management) -> day surgical team\",\"patient\":{\"label\":\"28F\",\"preferred_language\":\"Spanish\",\"interpreter_needed\":true},\"noteAuthorRole\":\"Night hospitalist\"}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "surgeon",
+          "radiology",
+          "transport",
+          "or",
+          "pharmacy",
+          "evs"
+        ]
+      },
+      {
+        "id": "H-A2:appointments",
+        "encounterId": "E-101",
+        "kind": "schedule",
+        "status": "recorded",
+        "text": "{\"suppliedCollection\":\"appointments\",\"value\":[]}",
+        "statements": [
+          "{\"suppliedCollection\":\"appointments\",\"value\":[]}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "surgeon",
+          "radiology",
+          "transport",
+          "or",
+          "pharmacy",
+          "evs"
+        ]
+      },
+      {
+        "id": "H-A2:interpreter_requests",
+        "encounterId": "E-101",
+        "kind": "schedule",
+        "status": "recorded",
+        "text": "{\"suppliedCollection\":\"interpreter_requests\",\"value\":[]}",
+        "statements": [
+          "{\"suppliedCollection\":\"interpreter_requests\",\"value\":[]}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "surgeon",
+          "radiology",
+          "transport",
+          "or",
+          "pharmacy",
+          "evs"
+        ]
+      }
+    ],
+    "drafts": [],
+    "findings": []
+  },
+  "actorId": "md-hospitalist",
+  "proposal": null,
+  "validation": null,
+  "observations": [],
+  "officialMetrics": null,
+  "scoringStatus": "incompatible_scoring_contract",
+  "latencyMs": 0.34179999999992106,
+  "tokens": 0,
+  "costMicrousd": 0,
+  "modelRequests": 0,
+  "humanAcceptances": 0,
+  "safetyAdjudication": "Unadjudicated global/per-case prose; validator result is separate and is not a zero-violation claim."
+}

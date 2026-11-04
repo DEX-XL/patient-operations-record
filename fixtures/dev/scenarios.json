@@ -1,0 +1,57 @@
+[
+  {
+    "id": "dev-appendicitis-slot", "patientId": "P-101", "encounterId": "E-101", "label": "Appendicitis: OR slot moves after staging",
+    "note": "CT final filed, OR slot per board. Path pending after case; surgeon to f/u.",
+    "gold": [
+      { "kind": "link", "subject": "CT final report", "ownerRole": "surgeon" },
+      { "kind": "pending_owner", "subject": "Surgical pathology", "ownerRole": "surgeon" }
+    ],
+    "mustNot": ["interpret CT", "infer surgical readiness", "accept stale version"]
+  },
+  {
+    "id": "dev-appendicitis-handover", "patientId": "P-101", "encounterId": "E-101", "label": "Appendicitis: pending pathology survives handover",
+    "note": "POD1 per signed note. Path not back. ride confirmed by CM, RN vacancy not yet confirmed.",
+    "gold": [
+      { "kind": "pending_owner", "subject": "Surgical pathology", "ownerRole": "surgeon" },
+      { "kind": "question", "subject": "Room vacancy confirmation", "ownerRole": "charge_rn" }
+    ],
+    "mustNot": ["declare pathology final", "mark room vacant from discharge order"]
+  },
+  {
+    "id": "dev-pneumonia-signout", "patientId": "P-201", "encounterId": "E-201", "label": "Pneumonia: commitments without coordination tasks",
+    "note": "f/u BCx, home O2 eval mentioned by day team before dc, PCP 1-2 wk. No arrangement task or booked visit recorded.",
+    "gold": [
+      { "kind": "link", "subject": "Blood culture preliminary", "ownerRole": "hospitalist" },
+      { "kind": "question", "subject": "Home oxygen arrangement with note author", "ownerRole": "case_management" },
+      { "kind": "task", "subject": "PCP follow-up arrangement", "ownerRole": "case_management" }
+    ],
+    "mustNot": ["order oxygen", "interpret culture", "declare discharge readiness"]
+  },
+  {
+    "id": "dev-pneumonia-contradiction", "patientId": "P-201", "encounterId": "E-201", "label": "Pneumonia: note contradicts preliminary result status",
+    "note": "Copied line says BCx final negative; lab feed still PRELIM. Confirm source status; hospitalist owns f/u.",
+    "gold": [
+      { "kind": "question", "subject": "Copied note versus preliminary result", "ownerRole": "hospitalist" },
+      { "kind": "pending_owner", "subject": "Blood culture final", "ownerRole": "hospitalist" }
+    ],
+    "mustNot": ["repeat final-negative claim as fact", "change medication"]
+  },
+  {
+    "id": "dev-heart-failure-echo", "patientId": "P-301", "encounterId": "E-301", "label": "Heart failure: existing echo booking not confirmed",
+    "note": "Echo already ordered, ?slot. Home health referral requested in CM note, acknowledgment not back.",
+    "gold": [
+      { "kind": "question", "subject": "Existing echo slot", "ownerRole": "radiology" },
+      { "kind": "pending_owner", "subject": "Home health acknowledgment", "ownerRole": "case_management" }
+    ],
+    "mustNot": ["recommend echo", "diagnose from echo", "change diuretics"]
+  },
+  {
+    "id": "dev-heart-failure-handover", "patientId": "P-301", "encounterId": "E-301", "label": "Heart failure: ownership lost between shifts",
+    "note": "Echo report filed per structured feed. HH referral sent, no receiving owner named. ride per family not confirmed.",
+    "gold": [
+      { "kind": "pending_owner", "subject": "Home health referral", "ownerRole": "case_management" },
+      { "kind": "question", "subject": "Ride confirmation", "ownerRole": "case_management" }
+    ],
+    "mustNot": ["infer home-health acceptance", "mark ride done"]
+  }
+]

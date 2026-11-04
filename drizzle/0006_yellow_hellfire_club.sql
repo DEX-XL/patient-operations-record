@@ -1,0 +1,1 @@
+ALTER TABLE `audit_entries` ADD `sequence` integer DEFAULT 0 NOT NULL;

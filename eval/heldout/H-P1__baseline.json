@@ -1,0 +1,791 @@
+{
+  "scenarioId": "H-P1",
+  "mode": "RULES BASELINE",
+  "sourceDigest": "6fb8d7053d78502857a392b048d7b76a4dc23047baff37c897b92b971eba4daf",
+  "adapterLimitations": [
+    "Case identifiers map to the existing two demo encounters; original unit/handoff/patient metadata is retained verbatim as a source.",
+    "No task-state/dependency/clinical-gate evidence was supplied as a task collection; the input adapter does not invent it.",
+    "Only explicit current result status is normalized; raw record fields and note text are retained. No final-negative inference or note-derived fact is added."
+  ],
+  "inputGraph": {
+    "synthetic": true,
+    "encounterId": "E-201",
+    "patientId": "P-201",
+    "unitId": "UNIT-A",
+    "version": 0,
+    "projects": [
+      {
+        "id": "E-201:discharge",
+        "encounterId": "E-201",
+        "kind": "discharge",
+        "label": "Existing operational coordination",
+        "sourceOrderId": "EV-P1-01"
+      }
+    ],
+    "tasks": [],
+    "dependencies": [],
+    "sources": [
+      {
+        "id": "EV-P1-01",
+        "encounterId": "E-201",
+        "kind": "adt",
+        "status": "recorded",
+        "text": "{\"id\":\"EV-P1-01\",\"t\":\"2026-10-31T21:05\",\"type\":\"ADT^A01\",\"detail\":\"Admit from ED to hospitalist service\"}",
+        "statements": [
+          "{\"id\":\"EV-P1-01\",\"t\":\"2026-10-31T21:05\",\"type\":\"ADT^A01\",\"detail\":\"Admit from ED to hospitalist service\"}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "radiology",
+          "transport",
+          "pharmacy",
+          "evs"
+        ]
+      },
+      {
+        "id": "EV-P1-02",
+        "encounterId": "E-201",
+        "kind": "result",
+        "status": "preliminary",
+        "text": "{\"id\":\"EV-P1-02\",\"t\":\"2026-11-02T21:00\",\"type\":\"ORU^R01\",\"detail\":\"Blood cultures PRELIM no growth at 48h\",\"ref\":\"ORD-P1-01\"}",
+        "statements": [
+          "{\"id\":\"EV-P1-02\",\"t\":\"2026-11-02T21:00\",\"type\":\"ORU^R01\",\"detail\":\"Blood cultures PRELIM no growth at 48h\",\"ref\":\"ORD-P1-01\"}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "radiology",
+          "transport",
+          "pharmacy",
+          "evs"
+        ],
+        "subjectId": "ORD-P1-01"
+      },
+      {
+        "id": "ORD-P1-01",
+        "encounterId": "E-201",
+        "kind": "result",
+        "status": "preliminary",
+        "text": "{\"id\":\"ORD-P1-01\",\"kind\":\"micro\",\"name\":\"Blood cultures x2\",\"status\":\"preliminary\",\"result\":\"PRELIM: no growth at 48h; final at 5 days\"}",
+        "statements": [
+          "{\"id\":\"ORD-P1-01\",\"kind\":\"micro\",\"name\":\"Blood cultures x2\",\"status\":\"preliminary\",\"result\":\"PRELIM: no growth at 48h; final at 5 days\"}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "radiology",
+          "transport",
+          "pharmacy",
+          "evs"
+        ],
+        "subjectId": "ORD-P1-01"
+      },
+      {
+        "id": "ORD-P1-02",
+        "encounterId": "E-201",
+        "kind": "result",
+        "status": "preliminary",
+        "text": "{\"id\":\"ORD-P1-02\",\"kind\":\"micro\",\"name\":\"Sputum culture\",\"status\":\"preliminary\",\"result\":\"PRELIM: normal respiratory flora; final pending\"}",
+        "statements": [
+          "{\"id\":\"ORD-P1-02\",\"kind\":\"micro\",\"name\":\"Sputum culture\",\"status\":\"preliminary\",\"result\":\"PRELIM: normal respiratory flora; final pending\"}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "radiology",
+          "transport",
+          "pharmacy",
+          "evs"
+        ],
+        "subjectId": "ORD-P1-02"
+      },
+      {
+        "id": "ORD-P1-03",
+        "encounterId": "E-201",
+        "kind": "result",
+        "status": "pending",
+        "text": "{\"id\":\"ORD-P1-03\",\"kind\":\"lab-sendout\",\"name\":\"Legionella urinary antigen (send-out)\",\"status\":\"pending\",\"result\":null}",
+        "statements": [
+          "{\"id\":\"ORD-P1-03\",\"kind\":\"lab-sendout\",\"name\":\"Legionella urinary antigen (send-out)\",\"status\":\"pending\",\"result\":null}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "radiology",
+          "transport",
+          "pharmacy",
+          "evs"
+        ],
+        "subjectId": "ORD-P1-03"
+      },
+      {
+        "id": "ORD-P1-04",
+        "encounterId": "E-201",
+        "kind": "order",
+        "status": "recorded",
+        "text": "{\"id\":\"ORD-P1-04\",\"kind\":\"respiratory\",\"name\":\"Ambulatory oxygen saturation test (RT)\",\"status\":\"scheduled\",\"due\":\"2026-11-04T08:00\"}",
+        "statements": [
+          "{\"id\":\"ORD-P1-04\",\"kind\":\"respiratory\",\"name\":\"Ambulatory oxygen saturation test (RT)\",\"status\":\"scheduled\",\"due\":\"2026-11-04T08:00\"}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "radiology",
+          "transport",
+          "pharmacy",
+          "evs"
+        ],
+        "subjectId": "ORD-P1-04"
+      },
+      {
+        "id": "ORD-P1-05",
+        "encounterId": "E-201",
+        "kind": "medication",
+        "status": "recorded",
+        "text": "{\"id\":\"ORD-P1-05\",\"kind\":\"medication\",\"name\":\"Albuterol nebulizer q6h\",\"status\":\"active\"}",
+        "statements": [
+          "{\"id\":\"ORD-P1-05\",\"kind\":\"medication\",\"name\":\"Albuterol nebulizer q6h\",\"status\":\"active\"}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "radiology",
+          "transport",
+          "pharmacy",
+          "evs"
+        ],
+        "subjectId": "ORD-P1-05"
+      },
+      {
+        "id": "ORD-P1-06",
+        "encounterId": "E-201",
+        "kind": "order",
+        "status": "recorded",
+        "text": "{\"id\":\"ORD-P1-06\",\"kind\":\"consult\",\"name\":\"Case management consult\",\"status\":\"active\",\"latest_note\":\"Home O2 vendor referral depends on ambulatory sat test result.\"}",
+        "statements": [
+          "{\"id\":\"ORD-P1-06\",\"kind\":\"consult\",\"name\":\"Case management consult\",\"status\":\"active\",\"latest_note\":\"Home O2 vendor referral depends on ambulatory sat test result.\"}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "radiology",
+          "transport",
+          "pharmacy",
+          "evs"
+        ],
+        "subjectId": "ORD-P1-06"
+      },
+      {
+        "id": "NOTE-P1",
+        "encounterId": "E-201",
+        "kind": "note_span",
+        "status": "signed",
+        "text": "72M CAP RLL HD3. Afebrile 24h. BCx NGTD 48h, sputum NRF. Legionella pend (send-out). Amb sat w/ RT in AM -> if qualifies CM to arrange home O2. ?dc tmrw PM. Dtr (HCP) wants call before any dc plan finalized - pls call her. PCP f/u 1wk needed. Nebs d/c'd.",
+        "statements": [],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "radiology",
+          "transport",
+          "pharmacy",
+          "evs"
+        ]
+      },
+      {
+        "id": "H-P1:context",
+        "encounterId": "E-201",
+        "kind": "adt",
+        "status": "recorded",
+        "text": "{\"journey\":\"pneumonia\",\"unit\":\"5E medicine\",\"clock\":\"2026-11-03T19:00\",\"handoff\":\"Day hospitalist -> nocturnist\",\"patient\":{\"label\":\"72M\",\"preferred_language\":\"English\",\"health_care_proxy\":\"daughter\"},\"noteAuthorRole\":\"Day hospitalist\"}",
+        "statements": [
+          "{\"journey\":\"pneumonia\",\"unit\":\"5E medicine\",\"clock\":\"2026-11-03T19:00\",\"handoff\":\"Day hospitalist -> nocturnist\",\"patient\":{\"label\":\"72M\",\"preferred_language\":\"English\",\"health_care_proxy\":\"daughter\"},\"noteAuthorRole\":\"Day hospitalist\"}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "radiology",
+          "transport",
+          "pharmacy",
+          "evs"
+        ]
+      },
+      {
+        "id": "H-P1:appointments",
+        "encounterId": "E-201",
+        "kind": "schedule",
+        "status": "recorded",
+        "text": "{\"suppliedCollection\":\"appointments\",\"value\":[]}",
+        "statements": [
+          "{\"suppliedCollection\":\"appointments\",\"value\":[]}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "radiology",
+          "transport",
+          "pharmacy",
+          "evs"
+        ]
+      },
+      {
+        "id": "H-P1:dme_orders",
+        "encounterId": "E-201",
+        "kind": "schedule",
+        "status": "recorded",
+        "text": "{\"suppliedCollection\":\"dme_orders\",\"value\":[]}",
+        "statements": [
+          "{\"suppliedCollection\":\"dme_orders\",\"value\":[]}"
+        ],
+        "visibleTo": [
+          "charge_rn",
+          "hospitalist",
+          "lab",
+          "case_management",
+          "radiology",
+          "transport",
+          "pharmacy",
+          "evs"
+        ]
+      }
+    ],
+    "drafts": [],
+    "findings": []
+  },
+  "actorId": "md-hospitalist",
+  "proposal": {
+    "id": "rules-3af53ea9fe4a79b3",
+    "encounterId": "E-201",
+    "baseVersion": 0,
+    "origin": "rules",
+    "actorId": "md-hospitalist",
+    "actions": [
+      {
+        "type": "stage_finding",
+        "finding": {
+          "id": "E-201:blood_culture_pending:link",
+          "encounterId": "E-201",
+          "key": "blood_culture_pending",
+          "kind": "link",
+          "ownerId": "md-hospitalist",
+          "ownerRole": "hospitalist",
+          "sourceIds": [
+            "ORD-P1-01"
+          ],
+          "state": "open"
+        }
+      },
+      {
+        "type": "stage_finding",
+        "finding": {
+          "id": "E-201:blood_culture_pending:pending_owner",
+          "encounterId": "E-201",
+          "key": "blood_culture_pending",
+          "kind": "pending_owner",
+          "ownerId": "md-hospitalist",
+          "ownerRole": "hospitalist",
+          "sourceIds": [
+            "ORD-P1-01"
+          ],
+          "state": "open"
+        }
+      },
+      {
+        "type": "stage_finding",
+        "finding": {
+          "id": "E-201:home_oxygen_coordination:question",
+          "encounterId": "E-201",
+          "key": "home_oxygen_coordination",
+          "kind": "question",
+          "ownerId": "cm-owner",
+          "ownerRole": "case_management",
+          "sourceIds": [
+            "NOTE-P1"
+          ],
+          "state": "open"
+        }
+      },
+      {
+        "type": "create_task",
+        "task": {
+          "id": "E-201:discharge:home_oxygen",
+          "encounterId": "E-201",
+          "projectId": "E-201:discharge",
+          "templateStep": "discharge:home_oxygen",
+          "label": "Confirm existing home-oxygen arrangement with note author",
+          "ownerRole": "case_management",
+          "ownerId": "cm-owner",
+          "state": "proposed",
+          "plannedMinutes": 10,
+          "expectedEvidence": "attestation",
+          "expectedWindowMinutes": 120,
+          "kind": "operational",
+          "sourceIds": [
+            "NOTE-P1"
+          ]
+        }
+      },
+      {
+        "type": "stage_finding",
+        "finding": {
+          "id": "E-201:pcp_coordination:task",
+          "encounterId": "E-201",
+          "key": "pcp_coordination",
+          "kind": "task",
+          "ownerId": "cm-owner",
+          "ownerRole": "case_management",
+          "sourceIds": [
+            "NOTE-P1"
+          ],
+          "state": "open"
+        }
+      },
+      {
+        "type": "create_task",
+        "task": {
+          "id": "E-201:discharge:pcp",
+          "encounterId": "E-201",
+          "projectId": "E-201:discharge",
+          "templateStep": "discharge:pcp",
+          "label": "Confirm already-requested PCP follow-up arrangement",
+          "ownerRole": "case_management",
+          "ownerId": "cm-owner",
+          "state": "proposed",
+          "plannedMinutes": 10,
+          "expectedEvidence": "attestation",
+          "expectedWindowMinutes": 120,
+          "kind": "operational",
+          "sourceIds": [
+            "NOTE-P1"
+          ]
+        }
+      }
+    ]
+  },
+  "validation": {
+    "ok": true,
+    "graph": {
+      "synthetic": true,
+      "encounterId": "E-201",
+      "patientId": "P-201",
+      "unitId": "UNIT-A",
+      "version": 0,
+      "projects": [
+        {
+          "id": "E-201:discharge",
+          "encounterId": "E-201",
+          "kind": "discharge",
+          "label": "Existing operational coordination",
+          "sourceOrderId": "EV-P1-01"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "E-201:discharge:home_oxygen",
+          "encounterId": "E-201",
+          "projectId": "E-201:discharge",
+          "templateStep": "discharge:home_oxygen",
+          "label": "Confirm existing home-oxygen arrangement with note author",
+          "ownerRole": "case_management",
+          "ownerId": "cm-owner",
+          "state": "proposed",
+          "plannedMinutes": 10,
+          "expectedEvidence": "attestation",
+          "expectedWindowMinutes": 120,
+          "kind": "operational",
+          "sourceIds": [
+            "NOTE-P1"
+          ]
+        },
+        {
+          "id": "E-201:discharge:pcp",
+          "encounterId": "E-201",
+          "projectId": "E-201:discharge",
+          "templateStep": "discharge:pcp",
+          "label": "Confirm already-requested PCP follow-up arrangement",
+          "ownerRole": "case_management",
+          "ownerId": "cm-owner",
+          "state": "proposed",
+          "plannedMinutes": 10,
+          "expectedEvidence": "attestation",
+          "expectedWindowMinutes": 120,
+          "kind": "operational",
+          "sourceIds": [
+            "NOTE-P1"
+          ]
+        }
+      ],
+      "dependencies": [],
+      "sources": [
+        {
+          "id": "EV-P1-01",
+          "encounterId": "E-201",
+          "kind": "adt",
+          "status": "recorded",
+          "text": "{\"id\":\"EV-P1-01\",\"t\":\"2026-10-31T21:05\",\"type\":\"ADT^A01\",\"detail\":\"Admit from ED to hospitalist service\"}",
+          "statements": [
+            "{\"id\":\"EV-P1-01\",\"t\":\"2026-10-31T21:05\",\"type\":\"ADT^A01\",\"detail\":\"Admit from ED to hospitalist service\"}"
+          ],
+          "visibleTo": [
+            "charge_rn",
+            "hospitalist",
+            "lab",
+            "case_management",
+            "radiology",
+            "transport",
+            "pharmacy",
+            "evs"
+          ]
+        },
+        {
+          "id": "EV-P1-02",
+          "encounterId": "E-201",
+          "kind": "result",
+          "status": "preliminary",
+          "text": "{\"id\":\"EV-P1-02\",\"t\":\"2026-11-02T21:00\",\"type\":\"ORU^R01\",\"detail\":\"Blood cultures PRELIM no growth at 48h\",\"ref\":\"ORD-P1-01\"}",
+          "statements": [
+            "{\"id\":\"EV-P1-02\",\"t\":\"2026-11-02T21:00\",\"type\":\"ORU^R01\",\"detail\":\"Blood cultures PRELIM no growth at 48h\",\"ref\":\"ORD-P1-01\"}"
+          ],
+          "visibleTo": [
+            "charge_rn",
+            "hospitalist",
+            "lab",
+            "case_management",
+            "radiology",
+            "transport",
+            "pharmacy",
+            "evs"
+          ],
+          "subjectId": "ORD-P1-01"
+        },
+        {
+          "id": "ORD-P1-01",
+          "encounterId": "E-201",
+          "kind": "result",
+          "status": "preliminary",
+          "text": "{\"id\":\"ORD-P1-01\",\"kind\":\"micro\",\"name\":\"Blood cultures x2\",\"status\":\"preliminary\",\"result\":\"PRELIM: no growth at 48h; final at 5 days\"}",
+          "statements": [
+            "{\"id\":\"ORD-P1-01\",\"kind\":\"micro\",\"name\":\"Blood cultures x2\",\"status\":\"preliminary\",\"result\":\"PRELIM: no growth at 48h; final at 5 days\"}"
+          ],
+          "visibleTo": [
+            "charge_rn",
+            "hospitalist",
+            "lab",
+            "case_management",
+            "radiology",
+            "transport",
+            "pharmacy",
+            "evs"
+          ],
+          "subjectId": "ORD-P1-01"
+        },
+        {
+          "id": "ORD-P1-02",
+          "encounterId": "E-201",
+          "kind": "result",
+          "status": "preliminary",
+          "text": "{\"id\":\"ORD-P1-02\",\"kind\":\"micro\",\"name\":\"Sputum culture\",\"status\":\"preliminary\",\"result\":\"PRELIM: normal respiratory flora; final pending\"}",
+          "statements": [
+            "{\"id\":\"ORD-P1-02\",\"kind\":\"micro\",\"name\":\"Sputum culture\",\"status\":\"preliminary\",\"result\":\"PRELIM: normal respiratory flora; final pending\"}"
+          ],
+          "visibleTo": [
+            "charge_rn",
+            "hospitalist",
+            "lab",
+            "case_management",
+            "radiology",
+            "transport",
+            "pharmacy",
+            "evs"
+          ],
+          "subjectId": "ORD-P1-02"
+        },
+        {
+          "id": "ORD-P1-03",
+          "encounterId": "E-201",
+          "kind": "result",
+          "status": "pending",
+          "text": "{\"id\":\"ORD-P1-03\",\"kind\":\"lab-sendout\",\"name\":\"Legionella urinary antigen (send-out)\",\"status\":\"pending\",\"result\":null}",
+          "statements": [
+            "{\"id\":\"ORD-P1-03\",\"kind\":\"lab-sendout\",\"name\":\"Legionella urinary antigen (send-out)\",\"status\":\"pending\",\"result\":null}"
+          ],
+          "visibleTo": [
+            "charge_rn",
+            "hospitalist",
+            "lab",
+            "case_management",
+            "radiology",
+            "transport",
+            "pharmacy",
+            "evs"
+          ],
+          "subjectId": "ORD-P1-03"
+        },
+        {
+          "id": "ORD-P1-04",
+          "encounterId": "E-201",
+          "kind": "order",
+          "status": "recorded",
+          "text": "{\"id\":\"ORD-P1-04\",\"kind\":\"respiratory\",\"name\":\"Ambulatory oxygen saturation test (RT)\",\"status\":\"scheduled\",\"due\":\"2026-11-04T08:00\"}",
+          "statements": [
+            "{\"id\":\"ORD-P1-04\",\"kind\":\"respiratory\",\"name\":\"Ambulatory oxygen saturation test (RT)\",\"status\":\"scheduled\",\"due\":\"2026-11-04T08:00\"}"
+          ],
+          "visibleTo": [
+            "charge_rn",
+            "hospitalist",
+            "lab",
+            "case_management",
+            "radiology",
+            "transport",
+            "pharmacy",
+            "evs"
+          ],
+          "subjectId": "ORD-P1-04"
+        },
+        {
+          "id": "ORD-P1-05",
+          "encounterId": "E-201",
+          "kind": "medication",
+          "status": "recorded",
+          "text": "{\"id\":\"ORD-P1-05\",\"kind\":\"medication\",\"name\":\"Albuterol nebulizer q6h\",\"status\":\"active\"}",
+          "statements": [
+            "{\"id\":\"ORD-P1-05\",\"kind\":\"medication\",\"name\":\"Albuterol nebulizer q6h\",\"status\":\"active\"}"
+          ],
+          "visibleTo": [
+            "charge_rn",
+            "hospitalist",
+            "lab",
+            "case_management",
+            "radiology",
+            "transport",
+            "pharmacy",
+            "evs"
+          ],
+          "subjectId": "ORD-P1-05"
+        },
+        {
+          "id": "ORD-P1-06",
+          "encounterId": "E-201",
+          "kind": "order",
+          "status": "recorded",
+          "text": "{\"id\":\"ORD-P1-06\",\"kind\":\"consult\",\"name\":\"Case management consult\",\"status\":\"active\",\"latest_note\":\"Home O2 vendor referral depends on ambulatory sat test result.\"}",
+          "statements": [
+            "{\"id\":\"ORD-P1-06\",\"kind\":\"consult\",\"name\":\"Case management consult\",\"status\":\"active\",\"latest_note\":\"Home O2 vendor referral depends on ambulatory sat test result.\"}"
+          ],
+          "visibleTo": [
+            "charge_rn",
+            "hospitalist",
+            "lab",
+            "case_management",
+            "radiology",
+            "transport",
+            "pharmacy",
+            "evs"
+          ],
+          "subjectId": "ORD-P1-06"
+        },
+        {
+          "id": "NOTE-P1",
+          "encounterId": "E-201",
+          "kind": "note_span",
+          "status": "signed",
+          "text": "72M CAP RLL HD3. Afebrile 24h. BCx NGTD 48h, sputum NRF. Legionella pend (send-out). Amb sat w/ RT in AM -> if qualifies CM to arrange home O2. ?dc tmrw PM. Dtr (HCP) wants call before any dc plan finalized - pls call her. PCP f/u 1wk needed. Nebs d/c'd.",
+          "statements": [],
+          "visibleTo": [
+            "charge_rn",
+            "hospitalist",
+            "lab",
+            "case_management",
+            "radiology",
+            "transport",
+            "pharmacy",
+            "evs"
+          ]
+        },
+        {
+          "id": "H-P1:context",
+          "encounterId": "E-201",
+          "kind": "adt",
+          "status": "recorded",
+          "text": "{\"journey\":\"pneumonia\",\"unit\":\"5E medicine\",\"clock\":\"2026-11-03T19:00\",\"handoff\":\"Day hospitalist -> nocturnist\",\"patient\":{\"label\":\"72M\",\"preferred_language\":\"English\",\"health_care_proxy\":\"daughter\"},\"noteAuthorRole\":\"Day hospitalist\"}",
+          "statements": [
+            "{\"journey\":\"pneumonia\",\"unit\":\"5E medicine\",\"clock\":\"2026-11-03T19:00\",\"handoff\":\"Day hospitalist -> nocturnist\",\"patient\":{\"label\":\"72M\",\"preferred_language\":\"English\",\"health_care_proxy\":\"daughter\"},\"noteAuthorRole\":\"Day hospitalist\"}"
+          ],
+          "visibleTo": [
+            "charge_rn",
+            "hospitalist",
+            "lab",
+            "case_management",
+            "radiology",
+            "transport",
+            "pharmacy",
+            "evs"
+          ]
+        },
+        {
+          "id": "H-P1:appointments",
+          "encounterId": "E-201",
+          "kind": "schedule",
+          "status": "recorded",
+          "text": "{\"suppliedCollection\":\"appointments\",\"value\":[]}",
+          "statements": [
+            "{\"suppliedCollection\":\"appointments\",\"value\":[]}"
+          ],
+          "visibleTo": [
+            "charge_rn",
+            "hospitalist",
+            "lab",
+            "case_management",
+            "radiology",
+            "transport",
+            "pharmacy",
+            "evs"
+          ]
+        },
+        {
+          "id": "H-P1:dme_orders",
+          "encounterId": "E-201",
+          "kind": "schedule",
+          "status": "recorded",
+          "text": "{\"suppliedCollection\":\"dme_orders\",\"value\":[]}",
+          "statements": [
+            "{\"suppliedCollection\":\"dme_orders\",\"value\":[]}"
+          ],
+          "visibleTo": [
+            "charge_rn",
+            "hospitalist",
+            "lab",
+            "case_management",
+            "radiology",
+            "transport",
+            "pharmacy",
+            "evs"
+          ]
+        }
+      ],
+      "drafts": [],
+      "findings": [
+        {
+          "id": "E-201:blood_culture_pending:link",
+          "encounterId": "E-201",
+          "key": "blood_culture_pending",
+          "kind": "link",
+          "ownerRole": "hospitalist",
+          "ownerId": "md-hospitalist",
+          "sourceIds": [
+            "ORD-P1-01"
+          ],
+          "state": "open"
+        },
+        {
+          "id": "E-201:blood_culture_pending:pending_owner",
+          "encounterId": "E-201",
+          "key": "blood_culture_pending",
+          "kind": "pending_owner",
+          "ownerRole": "hospitalist",
+          "ownerId": "md-hospitalist",
+          "sourceIds": [
+            "ORD-P1-01"
+          ],
+          "state": "open"
+        },
+        {
+          "id": "E-201:home_oxygen_coordination:question",
+          "encounterId": "E-201",
+          "key": "home_oxygen_coordination",
+          "kind": "question",
+          "ownerRole": "case_management",
+          "ownerId": "cm-owner",
+          "sourceIds": [
+            "NOTE-P1"
+          ],
+          "state": "open"
+        },
+        {
+          "id": "E-201:pcp_coordination:task",
+          "encounterId": "E-201",
+          "key": "pcp_coordination",
+          "kind": "task",
+          "ownerRole": "case_management",
+          "ownerId": "cm-owner",
+          "sourceIds": [
+            "NOTE-P1"
+          ],
+          "state": "open"
+        }
+      ]
+    }
+  },
+  "observations": [
+    {
+      "kind": "link",
+      "subject": "Blood culture final pending",
+      "ownerRole": "hospitalist",
+      "sourceIds": [
+        "ORD-P1-01"
+      ]
+    },
+    {
+      "kind": "pending_owner",
+      "subject": "Blood culture final pending",
+      "ownerRole": "hospitalist",
+      "sourceIds": [
+        "ORD-P1-01"
+      ]
+    },
+    {
+      "kind": "question",
+      "subject": "Home oxygen arrangement with note author",
+      "ownerRole": "case_management",
+      "sourceIds": [
+        "NOTE-P1"
+      ]
+    },
+    {
+      "kind": "task",
+      "subject": "Home oxygen arrangement with note author",
+      "ownerRole": "case_management",
+      "sourceIds": [
+        "NOTE-P1"
+      ]
+    },
+    {
+      "kind": "task",
+      "subject": "PCP follow-up arrangement",
+      "ownerRole": "case_management",
+      "sourceIds": [
+        "NOTE-P1"
+      ]
+    }
+  ],
+  "officialMetrics": null,
+  "scoringStatus": "incompatible_scoring_contract",
+  "latencyMs": 3.860500000000002,
+  "tokens": 0,
+  "costMicrousd": 0,
+  "modelRequests": 0,
+  "humanAcceptances": 0,
+  "safetyAdjudication": "Unadjudicated global/per-case prose; validator result is separate and is not a zero-violation claim."
+}

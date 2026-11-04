@@ -1,0 +1,1038 @@
+{
+  "capturedFrom": "LIVE META",
+  "model": "muse-spark-1.3",
+  "runId": "cf0166ff-3b61-42e0-ab14-9e0c3c0b7fed",
+  "responseIds": [
+    "resp_6ae4372e49f44b5239aa4782",
+    "resp_6ae43736046b4764279a4403"
+  ],
+  "capturedAt": "2026-10-30T06:20:28.856Z",
+  "scenarioId": "dev-pneumonia-signout",
+  "eventId": "p-night-signout",
+  "encounterId": "E-201",
+  "actorId": "rn-charge",
+  "contextHash": "dbde4185a10417d46c4815a23e73781a0b91d0719574d9b14bd900836ac64d79",
+  "promptHash": "dec417598666bf1d6d0242d98f52ec7eab6734f3e888983b5792c700abc5ad47",
+  "actions": [
+    {
+      "type": "create_task",
+      "task": {
+        "id": "E-201:discharge:home_oxygen",
+        "encounterId": "E-201",
+        "projectId": "E-201:discharge",
+        "templateStep": "discharge:home_oxygen",
+        "label": "Confirm existing home-oxygen arrangement with note author",
+        "ownerRole": "case_management",
+        "ownerId": "cm-owner",
+        "state": "proposed",
+        "plannedMinutes": 10,
+        "expectedEvidence": "attestation",
+        "expectedWindowMinutes": 120,
+        "kind": "operational",
+        "sourceIds": [
+          "p-night-signout"
+        ]
+      }
+    },
+    {
+      "type": "create_task",
+      "task": {
+        "id": "E-201:discharge:pcp",
+        "encounterId": "E-201",
+        "projectId": "E-201:discharge",
+        "templateStep": "discharge:pcp",
+        "label": "Confirm already-requested PCP follow-up arrangement",
+        "ownerRole": "case_management",
+        "ownerId": "cm-owner",
+        "state": "proposed",
+        "plannedMinutes": 10,
+        "expectedEvidence": "attestation",
+        "expectedWindowMinutes": 120,
+        "kind": "operational",
+        "sourceIds": [
+          "p-night-signout"
+        ]
+      }
+    },
+    {
+      "type": "create_task",
+      "task": {
+        "id": "E-201:discharge:pending_owner",
+        "encounterId": "E-201",
+        "projectId": "E-201:discharge",
+        "templateStep": "discharge:pending_owner",
+        "label": "Confirm named pending-result follow-up owner",
+        "ownerRole": "hospitalist",
+        "ownerId": "md-hospitalist",
+        "state": "proposed",
+        "plannedMinutes": 5,
+        "expectedEvidence": "attestation",
+        "expectedWindowMinutes": 60,
+        "kind": "operational",
+        "sourceIds": [
+          "p-bcx-pre"
+        ]
+      }
+    },
+    {
+      "type": "stage_finding",
+      "finding": {
+        "id": "E-201:blood_culture_pending:pending_owner",
+        "encounterId": "E-201",
+        "key": "blood_culture_pending",
+        "kind": "pending_owner",
+        "ownerRole": "hospitalist",
+        "ownerId": "md-hospitalist",
+        "sourceIds": [
+          "p-bcx-pre"
+        ],
+        "state": "open"
+      }
+    },
+    {
+      "type": "stage_finding",
+      "finding": {
+        "id": "E-201:home_oxygen_coordination:question",
+        "encounterId": "E-201",
+        "key": "home_oxygen_coordination",
+        "kind": "question",
+        "ownerRole": "case_management",
+        "ownerId": "cm-owner",
+        "sourceIds": [
+          "p-night-signout"
+        ],
+        "state": "open"
+      }
+    },
+    {
+      "type": "stage_finding",
+      "finding": {
+        "id": "E-201:pcp_coordination:task",
+        "encounterId": "E-201",
+        "key": "pcp_coordination",
+        "kind": "task",
+        "ownerRole": "case_management",
+        "ownerId": "cm-owner",
+        "sourceIds": [
+          "p-night-signout"
+        ],
+        "state": "open"
+      }
+    }
+  ],
+  "trace": [
+    {
+      "name": "get_templates",
+      "callId": "call_083b9587-68ea-4f3e-a1c7-f409ef01a4ad",
+      "ok": true,
+      "result": {
+        "templates": [
+          {
+            "id": "ct",
+            "projectKind": "imaging",
+            "steps": [
+              {
+                "id": "schedule",
+                "label": "Confirm existing CT slot",
+                "ownerRole": "radiology",
+                "plannedMinutes": 10,
+                "expectedEvidence": "schedule",
+                "expectedWindowMinutes": 60
+              },
+              {
+                "id": "transport",
+                "label": "Track transport to scheduled CT",
+                "ownerRole": "transport",
+                "plannedMinutes": 15,
+                "expectedEvidence": "attestation",
+                "expectedWindowMinutes": 30
+              },
+              {
+                "id": "scan",
+                "label": "Record scan completion",
+                "ownerRole": "radiology",
+                "plannedMinutes": 20,
+                "expectedEvidence": "attestation",
+                "expectedWindowMinutes": 60
+              },
+              {
+                "id": "preliminary",
+                "label": "Track preliminary CT report",
+                "ownerRole": "radiology",
+                "plannedMinutes": 20,
+                "expectedEvidence": "result",
+                "expectedWindowMinutes": 60
+              },
+              {
+                "id": "final",
+                "label": "Track final CT report",
+                "ownerRole": "radiology",
+                "plannedMinutes": 30,
+                "expectedEvidence": "result",
+                "expectedWindowMinutes": 120
+              }
+            ],
+            "dependencies": [
+              [
+                "schedule",
+                "transport"
+              ],
+              [
+                "transport",
+                "scan"
+              ],
+              [
+                "scan",
+                "preliminary"
+              ],
+              [
+                "preliminary",
+                "final"
+              ]
+            ]
+          },
+          {
+            "id": "lab",
+            "projectKind": "lab",
+            "steps": [
+              {
+                "id": "collect",
+                "label": "Record ordered specimen collection",
+                "ownerRole": "lab",
+                "plannedMinutes": 15,
+                "expectedEvidence": "attestation",
+                "expectedWindowMinutes": 60
+              },
+              {
+                "id": "preliminary",
+                "label": "Track preliminary report",
+                "ownerRole": "lab",
+                "plannedMinutes": 45,
+                "expectedEvidence": "result",
+                "expectedWindowMinutes": 120
+              },
+              {
+                "id": "final",
+                "label": "Track final report",
+                "ownerRole": "lab",
+                "plannedMinutes": 60,
+                "expectedEvidence": "result",
+                "expectedWindowMinutes": 2880
+              },
+              {
+                "id": "followup",
+                "label": "Confirm named result follow-up owner",
+                "ownerRole": "hospitalist",
+                "plannedMinutes": 5,
+                "expectedEvidence": "attestation",
+                "expectedWindowMinutes": 60
+              }
+            ],
+            "dependencies": [
+              [
+                "collect",
+                "preliminary"
+              ],
+              [
+                "preliminary",
+                "final"
+              ],
+              [
+                "final",
+                "followup"
+              ]
+            ]
+          },
+          {
+            "id": "or",
+            "projectKind": "or_case",
+            "steps": [
+              {
+                "id": "slot",
+                "label": "Confirm clinician-booked OR slot",
+                "ownerRole": "or",
+                "plannedMinutes": 10,
+                "expectedEvidence": "schedule",
+                "expectedWindowMinutes": 60
+              },
+              {
+                "id": "documents",
+                "label": "Confirm supplied OR checklist documentation",
+                "ownerRole": "surgeon",
+                "plannedMinutes": 15,
+                "expectedEvidence": "attestation",
+                "expectedWindowMinutes": 60
+              },
+              {
+                "id": "transport",
+                "label": "Track transport to booked OR",
+                "ownerRole": "transport",
+                "plannedMinutes": 15,
+                "expectedEvidence": "attestation",
+                "expectedWindowMinutes": 60
+              }
+            ],
+            "dependencies": [
+              [
+                "slot",
+                "transport"
+              ],
+              [
+                "documents",
+                "transport"
+              ]
+            ]
+          },
+          {
+            "id": "discharge",
+            "projectKind": "discharge",
+            "steps": [
+              {
+                "id": "home_oxygen",
+                "label": "Confirm existing home-oxygen arrangement with note author",
+                "ownerRole": "case_management",
+                "plannedMinutes": 10,
+                "expectedEvidence": "attestation",
+                "expectedWindowMinutes": 120
+              },
+              {
+                "id": "pcp",
+                "label": "Confirm already-requested PCP follow-up arrangement",
+                "ownerRole": "case_management",
+                "plannedMinutes": 10,
+                "expectedEvidence": "attestation",
+                "expectedWindowMinutes": 120
+              },
+              {
+                "id": "ride",
+                "label": "Confirm ride arrangement",
+                "ownerRole": "case_management",
+                "plannedMinutes": 10,
+                "expectedEvidence": "attestation",
+                "expectedWindowMinutes": 120
+              },
+              {
+                "id": "pending_owner",
+                "label": "Confirm named pending-result follow-up owner",
+                "ownerRole": "hospitalist",
+                "plannedMinutes": 5,
+                "expectedEvidence": "attestation",
+                "expectedWindowMinutes": 60
+              },
+              {
+                "id": "vacancy",
+                "label": "Record confirmed room vacancy",
+                "ownerRole": "charge_rn",
+                "plannedMinutes": 5,
+                "expectedEvidence": "adt",
+                "expectedWindowMinutes": 60
+              },
+              {
+                "id": "clean",
+                "label": "Record cleaning completion",
+                "ownerRole": "evs",
+                "plannedMinutes": 30,
+                "expectedEvidence": "attestation",
+                "expectedWindowMinutes": 60
+              },
+              {
+                "id": "ready",
+                "label": "Record bed-ready confirmation",
+                "ownerRole": "evs",
+                "plannedMinutes": 5,
+                "expectedEvidence": "attestation",
+                "expectedWindowMinutes": 30
+              }
+            ],
+            "dependencies": [
+              [
+                "vacancy",
+                "clean"
+              ],
+              [
+                "clean",
+                "ready"
+              ]
+            ]
+          }
+        ],
+        "findingDefinitions": {
+          "ct_report": {
+            "label": "CT final report",
+            "ownerRole": "surgeon",
+            "kinds": [
+              "link"
+            ],
+            "question": "The existing final CT report is linked without interpreting its contents."
+          },
+          "blood_culture_pending": {
+            "label": "Blood culture final pending",
+            "ownerRole": "hospitalist",
+            "kinds": [
+              "link",
+              "pending_owner"
+            ],
+            "question": "Confirm the recorded blood-culture follow-up owner."
+          },
+          "home_oxygen_coordination": {
+            "label": "Home oxygen arrangement with note author",
+            "ownerRole": "case_management",
+            "kinds": [
+              "question"
+            ],
+            "question": "The note mentions home oxygen. Confirm the existing coordination request with its author; this is not an oxygen order."
+          },
+          "pcp_coordination": {
+            "label": "PCP follow-up arrangement",
+            "ownerRole": "case_management",
+            "kinds": [
+              "task"
+            ],
+            "question": "Confirm the follow-up arrangement already mentioned in the note; this does not create an appointment or order."
+          },
+          "pathology_pending": {
+            "label": "Surgical pathology",
+            "ownerRole": "surgeon",
+            "kinds": [
+              "pending_owner"
+            ],
+            "question": "Confirm the named owner of the recorded pending pathology report."
+          },
+          "note_result_conflict": {
+            "label": "Copied note versus preliminary result",
+            "ownerRole": "hospitalist",
+            "kinds": [
+              "question"
+            ],
+            "question": "The note wording and structured result status differ. Ask the author to reconcile them; do not interpret the result."
+          },
+          "room_vacancy": {
+            "label": "Room vacancy confirmation",
+            "ownerRole": "charge_rn",
+            "kinds": [
+              "question"
+            ],
+            "question": "Confirm physical room vacancy separately from the ADT discharge notification."
+          },
+          "echo_slot": {
+            "label": "Existing echo slot",
+            "ownerRole": "radiology",
+            "kinds": [
+              "question"
+            ],
+            "question": "Confirm the slot for the echo already mentioned as ordered; this does not order a test."
+          },
+          "home_health": {
+            "label": "Home health referral",
+            "ownerRole": "case_management",
+            "kinds": [
+              "pending_owner"
+            ],
+            "question": "Confirm the receiving owner and acknowledgment for the existing referral."
+          },
+          "ride": {
+            "label": "Ride confirmation",
+            "ownerRole": "case_management",
+            "kinds": [
+              "question"
+            ],
+            "question": "Confirm the ride arrangement mentioned in the note."
+          }
+        },
+        "roster": [
+          {
+            "id": "rn-charge",
+            "role": "charge_rn"
+          },
+          {
+            "id": "md-hospitalist",
+            "role": "hospitalist"
+          },
+          {
+            "id": "lab-owner",
+            "role": "lab"
+          },
+          {
+            "id": "cm-owner",
+            "role": "case_management"
+          },
+          {
+            "id": "rad-owner",
+            "role": "radiology"
+          },
+          {
+            "id": "transport-owner",
+            "role": "transport"
+          },
+          {
+            "id": "pharmacy-owner",
+            "role": "pharmacy"
+          },
+          {
+            "id": "evs-owner",
+            "role": "evs"
+          }
+        ],
+        "actionSchema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "const": "create_task"
+                },
+                "task": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 100
+                    },
+                    "encounterId": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 100
+                    },
+                    "projectId": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 100
+                    },
+                    "templateStep": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 100
+                    },
+                    "label": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 240
+                    },
+                    "ownerRole": {
+                      "type": "string",
+                      "enum": [
+                        "charge_rn",
+                        "hospitalist",
+                        "lab",
+                        "case_management",
+                        "surgeon",
+                        "radiology",
+                        "transport",
+                        "or",
+                        "pharmacy",
+                        "evs"
+                      ]
+                    },
+                    "ownerId": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 100
+                    },
+                    "state": {
+                      "type": "string",
+                      "enum": [
+                        "proposed",
+                        "open",
+                        "blocked",
+                        "ready",
+                        "in_progress",
+                        "done",
+                        "stale",
+                        "cancelled",
+                        "superseded"
+                      ]
+                    },
+                    "plannedMinutes": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 10080
+                    },
+                    "notBeforeMinutes": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 9007199254740991
+                    },
+                    "expectedEvidence": {
+                      "type": "string",
+                      "enum": [
+                        "order",
+                        "result",
+                        "schedule",
+                        "adt",
+                        "note_span",
+                        "attestation",
+                        "medication"
+                      ]
+                    },
+                    "expectedWindowMinutes": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 10080
+                    },
+                    "kind": {
+                      "type": "string",
+                      "enum": [
+                        "operational",
+                        "clinical_gate"
+                      ]
+                    },
+                    "sourceIds": {
+                      "minItems": 1,
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 100
+                      }
+                    },
+                    "completionSourceId": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 100
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "encounterId",
+                    "projectId",
+                    "label",
+                    "ownerRole",
+                    "ownerId",
+                    "state",
+                    "plannedMinutes",
+                    "expectedEvidence",
+                    "expectedWindowMinutes",
+                    "kind",
+                    "sourceIds"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "type",
+                "task"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "const": "transition_task"
+                },
+                "taskId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100
+                },
+                "state": {
+                  "type": "string",
+                  "enum": [
+                    "proposed",
+                    "open",
+                    "blocked",
+                    "ready",
+                    "in_progress",
+                    "done",
+                    "stale",
+                    "cancelled",
+                    "superseded"
+                  ]
+                },
+                "evidenceSourceId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100
+                }
+              },
+              "required": [
+                "type",
+                "taskId",
+                "state"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "const": "assign_task"
+                },
+                "taskId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100
+                },
+                "ownerId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100
+                },
+                "ownerRole": {
+                  "type": "string",
+                  "enum": [
+                    "charge_rn",
+                    "hospitalist",
+                    "lab",
+                    "case_management",
+                    "surgeon",
+                    "radiology",
+                    "transport",
+                    "or",
+                    "pharmacy",
+                    "evs"
+                  ]
+                }
+              },
+              "required": [
+                "type",
+                "taskId",
+                "ownerId",
+                "ownerRole"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "const": "add_dependency"
+                },
+                "dependency": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 100
+                    },
+                    "from": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 100
+                    },
+                    "to": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 100
+                    },
+                    "kind": {
+                      "type": "string",
+                      "enum": [
+                        "finish_to_start",
+                        "clinician_gate"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "from",
+                    "to",
+                    "kind"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "type",
+                "dependency"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "const": "stage_draft"
+                },
+                "draft": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 100
+                    },
+                    "encounterId": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 100
+                    },
+                    "kind": {
+                      "type": "string",
+                      "enum": [
+                        "handover",
+                        "discharge_pending_tests"
+                      ]
+                    },
+                    "state": {
+                      "type": "string",
+                      "enum": [
+                        "draft",
+                        "reviewed",
+                        "adopted",
+                        "signed_in_ehr_simulated",
+                        "communicated"
+                      ]
+                    },
+                    "lines": {
+                      "minItems": 1,
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "text": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 2000
+                          },
+                          "sourceIds": {
+                            "minItems": 1,
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 100
+                            }
+                          }
+                        },
+                        "required": [
+                          "text",
+                          "sourceIds"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "reviewHistory": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "actorId": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 100
+                          },
+                          "at": {
+                            "type": "string"
+                          },
+                          "from": {
+                            "type": "string"
+                          },
+                          "to": {
+                            "type": "string"
+                          },
+                          "previousLines": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "text": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "maxLength": 2000
+                                },
+                                "sourceIds": {
+                                  "minItems": 1,
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string",
+                                    "minLength": 1,
+                                    "maxLength": 100
+                                  }
+                                }
+                              },
+                              "required": [
+                                "text",
+                                "sourceIds"
+                              ],
+                              "additionalProperties": false
+                            }
+                          },
+                          "newLines": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "text": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "maxLength": 2000
+                                },
+                                "sourceIds": {
+                                  "minItems": 1,
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string",
+                                    "minLength": 1,
+                                    "maxLength": 100
+                                  }
+                                }
+                              },
+                              "required": [
+                                "text",
+                                "sourceIds"
+                              ],
+                              "additionalProperties": false
+                            }
+                          }
+                        },
+                        "required": [
+                          "actorId",
+                          "at",
+                          "from",
+                          "to",
+                          "previousLines",
+                          "newLines"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "encounterId",
+                    "kind",
+                    "state",
+                    "lines"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "type",
+                "draft"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "const": "stage_finding"
+                },
+                "finding": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 100
+                    },
+                    "encounterId": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 100
+                    },
+                    "key": {
+                      "type": "string",
+                      "enum": [
+                        "ct_report",
+                        "blood_culture_pending",
+                        "home_oxygen_coordination",
+                        "pcp_coordination",
+                        "pathology_pending",
+                        "note_result_conflict",
+                        "room_vacancy",
+                        "echo_slot",
+                        "home_health",
+                        "ride"
+                      ]
+                    },
+                    "kind": {
+                      "type": "string",
+                      "enum": [
+                        "link",
+                        "question",
+                        "task",
+                        "pending_owner"
+                      ]
+                    },
+                    "ownerRole": {
+                      "type": "string",
+                      "enum": [
+                        "charge_rn",
+                        "hospitalist",
+                        "lab",
+                        "case_management",
+                        "surgeon",
+                        "radiology",
+                        "transport",
+                        "or",
+                        "pharmacy",
+                        "evs"
+                      ]
+                    },
+                    "ownerId": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 100
+                    },
+                    "sourceIds": {
+                      "minItems": 1,
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 100
+                      }
+                    },
+                    "state": {
+                      "type": "string",
+                      "enum": [
+                        "open",
+                        "answered"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "encounterId",
+                    "key",
+                    "kind",
+                    "ownerRole",
+                    "ownerId",
+                    "sourceIds",
+                    "state"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "type",
+                "finding"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "taskIdFormat": "<projectId>:<template step id without template prefix>",
+        "findingIdFormat": "<encounterId>:<key>:<kind>"
+      }
+    },
+    {
+      "name": "stage_task_changes",
+      "callId": "call_321d0892-ddee-4ba4-ba4e-877d46cec42f",
+      "ok": true,
+      "result": {
+        "accepted": true,
+        "humanAcceptanceRequired": true,
+        "actionCount": 6,
+        "baseVersion": 22
+      }
+    }
+  ],
+  "originalCostMicrousd": 16353,
+  "originalUsage": {
+    "inputTokens": 6901,
+    "outputTokens": 1818
+  }
+}

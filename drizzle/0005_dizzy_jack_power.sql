@@ -1,0 +1,1 @@
+ALTER TABLE `agent_runs` ADD `resume_after` integer DEFAULT false NOT NULL;

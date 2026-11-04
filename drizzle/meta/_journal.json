@@ -1,0 +1,55 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1793319248833,
+      "tag": "0000_shiny_nekra",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1793321028245,
+      "tag": "0001_cultured_lucky_pierre",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1793324383058,
+      "tag": "0002_numerous_starhawk",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1793324527425,
+      "tag": "0003_hard_pretty_boy",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1793324854761,
+      "tag": "0004_sticky_owl",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1793331682128,
+      "tag": "0005_dizzy_jack_power",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1793332122744,
+      "tag": "0006_yellow_hellfire_club",
+      "breakpoints": true
+    }
+  ]
+}

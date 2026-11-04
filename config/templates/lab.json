@@ -1,0 +1,11 @@
+{
+  "id": "lab",
+  "projectKind": "lab",
+  "steps": [
+    { "id": "collect", "label": "Record ordered specimen collection", "ownerRole": "lab", "plannedMinutes": 15, "expectedEvidence": "attestation", "expectedWindowMinutes": 60 },
+    { "id": "preliminary", "label": "Track preliminary report", "ownerRole": "lab", "plannedMinutes": 45, "expectedEvidence": "result", "expectedWindowMinutes": 120 },
+    { "id": "final", "label": "Track final report", "ownerRole": "lab", "plannedMinutes": 60, "expectedEvidence": "result", "expectedWindowMinutes": 2880 },
+    { "id": "followup", "label": "Confirm named result follow-up owner", "ownerRole": "hospitalist", "plannedMinutes": 5, "expectedEvidence": "attestation", "expectedWindowMinutes": 60 }
+  ],
+  "dependencies": [["collect", "preliminary"], ["preliminary", "final"], ["final", "followup"]]
+}

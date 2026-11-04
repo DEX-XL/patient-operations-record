@@ -1,0 +1,4 @@
+MSH|^~\&|SYNTHETIC_DEMO|DEMO|REPLAY|DEMO|20261029070000||SIU^S13|sample-reschedule|T|2.5.1
+PID|1||P-101^^^SYNTHETIC
+PV1||I|UNIT-A^101||||||||||||||||E-101
+SCH|existing-or-slot

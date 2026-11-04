@@ -1,0 +1,3 @@
+# B7 verifies original raw bytes; Git must never rewrite these frozen artifacts.
+heldout/inputs.json -text
+heldout/gold.json -text

@@ -1,0 +1,14 @@
+{
+  "id": "discharge",
+  "projectKind": "discharge",
+  "steps": [
+    { "id": "home_oxygen", "label": "Confirm existing home-oxygen arrangement with note author", "ownerRole": "case_management", "plannedMinutes": 10, "expectedEvidence": "attestation", "expectedWindowMinutes": 120 },
+    { "id": "pcp", "label": "Confirm already-requested PCP follow-up arrangement", "ownerRole": "case_management", "plannedMinutes": 10, "expectedEvidence": "attestation", "expectedWindowMinutes": 120 },
+    { "id": "ride", "label": "Confirm ride arrangement", "ownerRole": "case_management", "plannedMinutes": 10, "expectedEvidence": "attestation", "expectedWindowMinutes": 120 },
+    { "id": "pending_owner", "label": "Confirm named pending-result follow-up owner", "ownerRole": "hospitalist", "plannedMinutes": 5, "expectedEvidence": "attestation", "expectedWindowMinutes": 60 },
+    { "id": "vacancy", "label": "Record confirmed room vacancy", "ownerRole": "charge_rn", "plannedMinutes": 5, "expectedEvidence": "adt", "expectedWindowMinutes": 60 },
+    { "id": "clean", "label": "Record cleaning completion", "ownerRole": "evs", "plannedMinutes": 30, "expectedEvidence": "attestation", "expectedWindowMinutes": 60 },
+    { "id": "ready", "label": "Record bed-ready confirmation", "ownerRole": "evs", "plannedMinutes": 5, "expectedEvidence": "attestation", "expectedWindowMinutes": 30 }
+  ],
+  "dependencies": [["vacancy", "clean"], ["clean", "ready"]]
+}

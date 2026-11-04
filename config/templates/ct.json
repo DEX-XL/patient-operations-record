@@ -1,0 +1,12 @@
+{
+  "id": "ct",
+  "projectKind": "imaging",
+  "steps": [
+    { "id": "schedule", "label": "Confirm existing CT slot", "ownerRole": "radiology", "plannedMinutes": 10, "expectedEvidence": "schedule", "expectedWindowMinutes": 60 },
+    { "id": "transport", "label": "Track transport to scheduled CT", "ownerRole": "transport", "plannedMinutes": 15, "expectedEvidence": "attestation", "expectedWindowMinutes": 30 },
+    { "id": "scan", "label": "Record scan completion", "ownerRole": "radiology", "plannedMinutes": 20, "expectedEvidence": "attestation", "expectedWindowMinutes": 60 },
+    { "id": "preliminary", "label": "Track preliminary CT report", "ownerRole": "radiology", "plannedMinutes": 20, "expectedEvidence": "result", "expectedWindowMinutes": 60 },
+    { "id": "final", "label": "Track final CT report", "ownerRole": "radiology", "plannedMinutes": 30, "expectedEvidence": "result", "expectedWindowMinutes": 120 }
+  ],
+  "dependencies": [["schedule", "transport"], ["transport", "scan"], ["scan", "preliminary"], ["preliminary", "final"]]
+}
