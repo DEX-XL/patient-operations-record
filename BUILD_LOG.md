@@ -1,5 +1,13 @@
 # Build log
 
+## November4 — authorized final release and actual B7 trials
+
+Rohit directly instructed completion, public submission, an X demo post and all associated delivery. He renewed his statement that150USD Meta credits are available. Existing two-hour human-evidence rule was applied at2026-11-04T18:05:05Z, without inventing expiry. Current official Standard Spark pricing was rechecked; the signed-in dashboard22requests matched the22settled local ledger, with0reserved/uncertain and no observed additional usage. Existing bucket caps and30USD reserve remain unchanged. No smoke permission was repeated.
+
+The fixed12B7trial runner was started through guarded Meta transport in heldoutEval; results, failures and costs will be retained. Official comparison metrics remain unavailable due to the unchanged scoring-contract failure. No frozen algorithm/prompt/template/scorer or original raw dataset changed. Private funding attestation/authentication are excluded from release.
+
+Public GitHub repository DEX-XL/patient-operations-record was created under the existing authenticated account after explicit user authorization. Source push, free hosting, final video/X post and submission verification are ongoing. No new license has been added, no paid hosting/card/top-up used, and no final receipt is claimed.
+
 ## November3 late EST — final delivery documentation and read-only provider check
 
 Updated README/final delivery documentation to reflect the completed192-test clean-clone/typecheck/build/bundle/boundary/freeze checks and the corrected Git raw-byte packaging. No source algorithm, prompt, template, validator, scorer or dataset changed. EVAL.md still reports unavailable official comparison metrics and twelve unsent trials. The prior verified implementation candidate is2f445917; subsequent changes are documentation only. No repeated full runtime tests or inference were needed for these text edits.
