@@ -9,7 +9,7 @@ const journal = "drizzle/meta/_journal.json";
 const captures = JSON.parse(await readFile("fixtures/recordings/index.json", "utf8"));
 assert(captures.length > 0, "Real recording manifest must not be empty");
 for (const name of captures) assert(/^[a-z0-9-]+__[a-z0-9-]+__[a-f0-9]{64}\.json$/.test(name));
-const routes = ["agent", "replay/state", "proposals", "drafts", "tasks"];
+const routes = ["agent", "replay/state", "proposals", "drafts", "tasks", "handovers", "coordination"];
 for (const route of routes) {
   const manifest = `.next/server/app/api/${route}/route.js.nft.json`;
   const { files } = JSON.parse(await readFile(manifest, "utf8"));

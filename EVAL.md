@@ -1,5 +1,7 @@
 # Evaluation — twelve raw trials complete; official comparison unavailable
 
+**Later input/UI extension:** persistent staff handovers and department coordination tasks were added onNovember4 outside the frozen algorithm roots. Their unit/HTTP checks are engineering evidence, not part of this held-out evaluation. The original prompt, tools, vocabulary, validator, templates, scorer and all reported trial outcomes below remain unchanged.
+
 The algorithm was frozen before reading the held-out cases. Both original held-out raw-byte SHA-256 hashes match. Four baseline executions are saved. **All twelve fixed Meta trials have now reached terminal outcomes: six staged, four exhausted and two context-bound failures. No valid official Meta-versus-baseline score is available.** No superiority, safety guarantee, time saved or clinical benefit is claimed.
 
 ## Provenance and integrity

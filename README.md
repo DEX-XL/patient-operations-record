@@ -4,13 +4,19 @@ A synthetic U.S. inpatient shift-change replay for the Meta Global AI Developer 
 
 **Synthetic data. Not for clinical use. Not HIPAA-certified.**
 
-Public source: https://github.com/DEX-XL/patient-operations-record . Working keyless product: https://patient-operations-record.vercel.app . Final video publication is in progress; this repository is the synthetic hackathon prototype. Current release operations are in BUILD_LOG.md.
+Public source: https://github.com/DEX-XL/patient-operations-record . Working keyless product: https://patient-operations-record.vercel.app . The November4 staff-workflow correction adds persistent handovers and department tasks; final video publication and submission remain in progress. This is a synthetic hackathon prototype. Current release operations are in BUILD_LOG.md.
 
 ## Current build
 
-The local app now has four synchronized department panes, a 48-hour replay, two patient workspaces, planned critical paths, a proposal inbox, cited drafts with human review and diffs, source inspection, and a trace/cost/audit panel. The rules baseline works offline. Six development scenarios and their measured baseline results are in `eval/DEV_RESULTS.md`.
+The app starts with a patient board: unfinished work, responsible team and next recorded step. **Try the handover example** opens one patient and explains the note → review → department-work sequence. Staff can save an unsigned synthetic handover, propose a source-linked operational task, assign an existing department owner and confirm permitted work through human evidence. Ten demo personas are available; they are not hospital authentication.
 
-Meta Spark1.3 has executed real role-scoped tool runs and staged validated proposals. Genuine development recordings retain response IDs, tool traces and reconciled costs. Muse Code completed two coding contributions: the keyless demo launcher and a bounded64KiB runtime envelope after a real context-limit failure. Codex reviewed/integrated the changes, corrected environment typing, and fixed observer tabs taking over externally started runs. Exact runs, costs and failures belong in BUILD_LOG.md. A recorded-demo draft and final local delivery check are complete. All12fixed Meta evaluation trials finished:6staged review batches,4exhausted runs,2context-bound failures;64settled requests,$0.581462tracked. No failed trial was retried/replaced. Official comparison scores remain unavailable because the frozen scorer does not match the gold contract; see EVAL.md. Public source and free hosting are live. Hosted playback passed20HTTP acceptance checks. Final video/submission are in progress.
+Meta Muse Spark performs real source-grounded reconciliation behind server-side limits. A fresh November4 test used a newly entered family-pickup handover: Meta cited that exact note, proposed a Case management task, and a Charge nurse accepted the batch. Four genuine native Muse coding contributions were reviewed and integrated, including the new handover transaction and coordination helper. Codex implemented/reviewed the remainder. Costs, corrections and failures are in BUILD_LOG.md.
+
+The hosted app defaults to **RECORDED META** using three genuine captures. A changed staff note cannot silently reuse a different capture: it offers an explicitly selected rules check, or fresh LIVE Meta where the operator has enabled credentials and current funding. The public deployment has live inference disabled; the private live workflow is demonstrated in the video. No output is fabricated or relabeled as a model response.
+
+Latest correction checks: **263 tests / 25 files**, typecheck, production build, all seven database-route bundles, boundaries and unchanged frozen algorithm verification passed. **33 actual HTTP assertions** passed for handover persistence, review, owner-specific Pharmacy completion, rejection paths and zero-inference keyless operation. These new workflow extensions were added prospectively after the original algorithm freeze and are not validated by the earlier held-out evaluation.
+
+All12fixed model evaluation trials remain public:6staged review batches,4exhausted runs,2context-bound failures. Official comparison scores remain unavailable because the frozen scorer does not match the untouched gold contract. See EVAL.md. No clinical-benefit, accuracy or time-saving claim is made.
 
 ## Run locally
 
@@ -30,16 +36,17 @@ For keyless playback after building: `pnpm demo --port 4393 --hostname 127.0.0.1
 
 The package scripts disable Next's automatic dotenv loading and guard dotenv file reads, including in child workers. **Do not invoke Next directly or load `.env.local`.** Explicit process environment supplies database settings. Local storage defaults to the ignored `data/patient-ops.db`. No database account, hosting subscription or deployment is required locally.
 
-## Try the offline demonstration
+## Try the demonstration
 
-1. Start in Unit replay, select **2000Ãƒâ€” demo**, then Play. The replay pauses at the first sign-out.
-2. Reconcile P-101 in **RULES BASELINE**. The run proposes a source link and resumes the replay. After the supplied OR slot moves, the inbox marks the old proposal stale; attempting acceptance rejects it. Pause, reject the stale batch and reconcile the current record.
-3. At the pneumonia night sign-out, open P-201 and reconcile. Inspect the preliminary blood-culture link, follow-up owner and case-management commitments. As Charge RN, accept the exact batch; the case-management pane updates on the same shared tick.
-4. On a patient workspace, stage a factual handover or pending-tests section. Inspect the citations in the inbox and accept the draft. Review text, inspect the diff and progress the simulated review states. Unsupported edits are rejected and remain editable.
-5. Run the explicitly labeled unsupported-line test. A valid citation does not make the invented sentence supported. Inspect a source drawer; Escape closes it and returns keyboard focus.
-6. A task's assigned owner or Charge RN can confirm eligible operational work. This records a human attestation. Model output cannot mark a task done.
+1. Open the patient board and select **Try the handover example**. It loads the synthetic P201 night handover without making a model call.
+2. Read the latest handover, then select **Review handover**. In RECORDED META this uses a genuine, context-matched capture.
+3. In **Review changes**, inspect the named team and source links. Select **Accept these changes** as Charge nurse.
+4. Open **Department work**. Case management now has the accepted tasks; the preliminary blood culture still awaits its final result.
+5. Open a patient to **Save handover**, or expand **Add a task for a department**. These are real persistent staff inputs. Task proposals remain separate from acceptance and completion. A new note requires an explicit fresh Live/rules choice rather than an unrelated capture.
+6. After accepting a staff coordination task, choose its department persona to view the assigned work and explicitly confirm eligible operational completion. Result-based/clinical tasks cannot be completed through that new coordination endpoint.
 
-The demo persona selector changes the server-validated action actor. All four panes remain visible as an observer console. These role filters are not hospital authentication or SSO.
+The surgical example separately demonstrates a supplied OR schedule change and stale-proposal rejection. Replay speed and assistant mode are under **Demonstration controls**. Source/run/audit evidence is secondary; grant accounting is not part of the normal staff workflow.
+
 
 ## Engine and safety contract
 

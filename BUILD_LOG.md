@@ -142,3 +142,23 @@ Fresh actual-UI LIVE run cc88ea82-3485-431d-8c02-9576de64b0f8 (P201, rn-charge) 
 Ledger through that capture:88settled requests,$0.797515tracked,0reserved/uncertain. Muse0.077225/dev0.120788/eval0.581462/publicDemo0.018040;reserve30untouched. Actual provider billing may differ because the local estimates conservatively price all input uncached. No claim of a fresh provider balance.
 
 Final competition video179seconds and Xdemo90seconds were rendered from actual footage, with clear RECORDED/LIVE labels, visible human-review boundaries and disclosed evaluation failures. Local installed Windows synthetic narration is not a cloned voice. Video publication/submission receipts remain pending and must be recorded only after success.
+
+## November4 staff-workflow correction after user review
+
+Rohit rejected the developer-first UI. The corrected frontend starts with a patient board and guided handover, moves replay/mode controls into a disclosure, removes grant allocations from the staff experience and keeps technical evidence secondary. Ten existing demo personas are available. Unsupported personas cannot invoke the old restricted agent/proposal actions. A new handwritten note blocks unrelated recorded playback and offers an explicit fresh Live/rules choice.
+
+New persistent workflow modules sit outside the original frozen algorithm roots. `src/workflow/handovers.ts` atomically saves a bounded unsigned synthetic note, normalized source/event, encounter version and hash-linked human audit. It checks assignment, exact unit, paused clock, active-run lock, idempotent command UUID and optimistic version. `src/workflow/coordination.ts` stages a HUMAN operational task tied to an existing project/order and source; acceptance is separate. The named owner or Charge nurse can attest only new coordination UUID tasks, with existing dependency/version/evidence validation. No clinical order, result, gate, final note or model completion is created.
+
+Two genuine new guarded native Muse Code contributions produced the initial transaction/helper code:
+- f644ebb6-db23-44b7-88e6-6241e53dfb30; response resp_6aeb9972547d8b38e36c490d;19985input/2177output;$0.034234. Reviewed corrections removed fallback session selection and unsafe casts, tightened exact-unit/clock/run checks and preserved typed normalization/audit.
+- 6d5fdc87-92ae-4650-a52b-7a306702fd8b; response resp_6aeb9a8fc8f9aee62c0e41dd;20017input/2526output;$0.035757. Reviewed corrections tightened typed actions, clinical-command rejection, assigned owners and source anchors. Human-completion extension was implemented/reviewed in Codex.
+
+Four native Muse coding contributions now exist in total. Most earlier implementation was in Codex; there is no claim that Muse wrote the entire app or that a new foundation model was trained.
+
+263tests/25files, typecheck and production build passed; migrations are verified in all7DB-backed route bundles. Guardrails and the original frozen manifest still pass.33real HTTP assertions passed on a fresh isolated keyless production server, including handover persistence, duplicate/stale/origin/shape guards, context-mismatch honesty, explicitly selected rules review, human acceptance, Pharmacy task/owner confirmation and zero model calls/spend. New workflow tests do not retroactively validate the old held-out comparison.
+
+Fresh LIVE test a743cfe7-8243-4bee-8825-797a23c4af39 used a newly typed synthetic handover,5requests/5functions,17906input/2730output,$0.033987 in runtimeDev. Meta cited the new staff-handover source and created a ride-confirmation task. Charge nurse accepted the exact batch through the actual revised UI; Case management received that work. Separately, a staff-authored Pharmacy coordination proposal was accepted by Charge nurse and explicitly completed by its named Pharmacy persona through the new endpoint. No real Pharmacy system connection is claimed.
+
+Tracked ledger after that live test:95settled requests,$0.901493,0reserved/uncertain. Muse coding0.147216/dev0.154775/eval0.581462/publicDemo0.018040;reserve30untouched. Conservative token-cost estimates, not a fresh provider bill or balance. Human confirmation at least140USD onNovember4 covered a bounded session with actual grant expiry unknown. No card, top-up, subscription or allowance purchase/reset was used.
+
+Public deployment verification, refreshed media URLs and final submission receipt must be recorded only after those outcomes are observed. Final competition Submit remains held for Rohit's new approval after reviewing the corrected build.
