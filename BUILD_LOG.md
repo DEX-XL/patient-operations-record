@@ -1,5 +1,11 @@
 # Build log
 
+## November3 late EST — final delivery documentation and read-only provider check
+
+Updated README/final delivery documentation to reflect the completed192-test clean-clone/typecheck/build/bundle/boundary/freeze checks and the corrected Git raw-byte packaging. No source algorithm, prompt, template, validator, scorer or dataset changed. EVAL.md still reports unavailable official comparison metrics and twelve unsent trials. The prior verified implementation candidate is2f445917; subsequent changes are documentation only. No repeated full runtime tests or inference were needed for these text edits.
+
+A focused signed-in dashboard check now showed22requests,117.9kinput/11.9koutput tokens and reported spend₹0.00. Billing still stayed Loading billing; this is NOT evidence of a current grant balance or expiry, and no funding timestamp was renewed. No API-key page was opened and no secret read. Connected GitHub login was confirmed as DEX-XL; proposed patient-operations-record metadata lookup returned404, which does not reserve the name or prove universal availability. No remote resource or publication occurred.
+
 ## November3 EST — B7 integrity passed; evaluation comparison unavailable
 
 Source freeze created before any held-out access at2026-11-04T01:39:07.471Z. Both original raw hashes match (see EVAL.md). Four unchanged baseline executions are saved; twelve registered Meta trials remain unsent pending current funding. Gold requires six categories, exact references and note spans, while frozen scorer/output uses four categories and normalized subjects. No pre-registered mapping exists. Official scores remain unavailable, with no post-exposure tuning. Added only operational input/runner scripts, toy reader tests and gated publication of exact verified dataset/report paths. Full192tests/22files, typecheck, source-freeze verification and guardrails pass. Paid runner branch remains unexercised; stale preflight made no request. No new inference, no publication; ledger remains22settled/$0.198013/0uncertain. EVAL.md preserves the failure and adapter limits.

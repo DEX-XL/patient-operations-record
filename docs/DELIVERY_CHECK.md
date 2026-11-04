@@ -1,5 +1,7 @@
 # Fresh-clone delivery check — October 30, 2026
 
+Historical pre-freeze replay check. The newer192-test final local source/build/archive verification is in [FINAL_DELIVERY_CHECK.md](FINAL_DELIVERY_CHECK.md). B7 is now exposed after its freeze/hash gate; EVAL.md records the scoring-contract failure. Unopened/pending statements below describe October30 only.
+
 Passed in a local Git clone of a secret-free candidate snapshot, with no pre-existing database, build output, model key or native login. The original working app's private database and credentials were not copied. Nothing was pushed or published. This is a pre-freeze delivery check, to be repeated on the final public candidate.
 
 The frozen lockfile installed from the local package cache. Drizzle migrations, **179 tests across 19 files**, production compilation/TypeScript, emitted bundle verification and the secret/held-out boundary scan passed. The candidate Git working tree stayed clean after verification.
