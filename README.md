@@ -4,13 +4,13 @@ A synthetic U.S. inpatient shift-change replay for the Meta Global AI Developer 
 
 **Synthetic data. Not for clinical use. Not HIPAA-certified.**
 
-Public source: https://github.com/DEX-XL/patient-operations-record . Hosted product and final video links are pending verification; this repository is the synthetic hackathon prototype. Current release operations are in BUILD_LOG.md.
+Public source: https://github.com/DEX-XL/patient-operations-record . Working keyless product: https://patient-operations-record.vercel.app . Final video publication is in progress; this repository is the synthetic hackathon prototype. Current release operations are in BUILD_LOG.md.
 
 ## Current build
 
 The local app now has four synchronized department panes, a 48-hour replay, two patient workspaces, planned critical paths, a proposal inbox, cited drafts with human review and diffs, source inspection, and a trace/cost/audit panel. The rules baseline works offline. Six development scenarios and their measured baseline results are in `eval/DEV_RESULTS.md`.
 
-Meta Spark1.3 has executed real role-scoped tool runs and staged validated proposals. Genuine development recordings retain response IDs, tool traces and reconciled costs. Muse Code completed two coding contributions: the keyless demo launcher and a bounded64KiB runtime envelope after a real context-limit failure. Codex reviewed/integrated the changes, corrected environment typing, and fixed observer tabs taking over externally started runs. Exact runs, costs and failures belong in BUILD_LOG.md. A recorded-demo draft and final local delivery check are complete. All12fixed Meta evaluation trials finished:6staged review batches,4exhausted runs,2context-bound failures;64settled requests,$0.581462tracked. No failed trial was retried/replaced. Official comparison scores remain unavailable because the frozen scorer does not match the gold contract; see EVAL.md. Public source is published; free hosting/final video/submission are in progress.
+Meta Spark1.3 has executed real role-scoped tool runs and staged validated proposals. Genuine development recordings retain response IDs, tool traces and reconciled costs. Muse Code completed two coding contributions: the keyless demo launcher and a bounded64KiB runtime envelope after a real context-limit failure. Codex reviewed/integrated the changes, corrected environment typing, and fixed observer tabs taking over externally started runs. Exact runs, costs and failures belong in BUILD_LOG.md. A recorded-demo draft and final local delivery check are complete. All12fixed Meta evaluation trials finished:6staged review batches,4exhausted runs,2context-bound failures;64settled requests,$0.581462tracked. No failed trial was retried/replaced. Official comparison scores remain unavailable because the frozen scorer does not match the gold contract; see EVAL.md. Public source and free hosting are live. Hosted playback passed20HTTP acceptance checks. Final video/submission are in progress.
 
 ## Run locally
 

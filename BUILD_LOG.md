@@ -130,3 +130,15 @@ Rohit explicitly approved starting B1/B2. Read order: HANDOFF_TO_CODEX.md, resea
 - November 1, 9 PM ET feature freeze stays fixed. B7 alone unlocks held-out hash verification and use.
 
 Meta product feedback: not yet based on runtime use. Official model/Responses/pricing documentation was rechecked; no runtime success is claimed.
+
+## November4 public delivery and fresh LIVE demo
+
+Public product: https://patient-operations-record.vercel.app . Vercel Hobby and Turso Starter were provisioned under explicit user approval for free services only. No card, paid plan, trial or upgrade was accepted. Server instrumentation maps the marketplace's DATABASE_TURSO_DATABASE_URL / DATABASE_TURSO_AUTH_TOKEN names into the app's internal server-only settings. Existing explicit settings win; absent values stay absent; edge execution is skipped. This deployment adapter does not alter the frozen model, validator, templates or scoring. Five adapter tests added;197tests in23files, typecheck, production build, bundles, guardrails and frozen-source verification passed.
+
+Twenty HTTP acceptance assertions passed against the actual hosted database: all3 genuine captures, stale OR rejection/replan, apply once and duplicate rejection, accepted CM work across panes, preliminary status preservation, cited pending-pathology draft, unsupported-line rejection and LIVE denial with no new inference. The public deployment has live inference disabled and no Meta credential. It is one shared synthetic demo unit, not a multi-tenant hospital service.
+
+Fresh actual-UI LIVE run cc88ea82-3485-431d-8c02-9576de64b0f8 (P201, rn-charge) used2requests/2functions,7054input/2170output,$0.018040 conservative tracked cost in publicDemo. Response IDs resp_6aeb7d7bd2679fdae035472b and resp_6aeb7d882be70d43372c4a2a. It staged6operational actions. ChargeRN reviewed and accepted the exact batch once; source-linked CM tasks appeared in the department view. Earlier stale development batches were rejected, with audit retained. No model retry or clinical order.
+
+Ledger through that capture:88settled requests,$0.797515tracked,0reserved/uncertain. Muse0.077225/dev0.120788/eval0.581462/publicDemo0.018040;reserve30untouched. Actual provider billing may differ because the local estimates conservatively price all input uncached. No claim of a fresh provider balance.
+
+Final competition video179seconds and Xdemo90seconds were rendered from actual footage, with clear RECORDED/LIVE labels, visible human-review boundaries and disclosed evaluation failures. Local installed Windows synthetic narration is not a cloned voice. Video publication/submission receipts remain pending and must be recorded only after success.
