@@ -4,7 +4,7 @@ A synthetic U.S. inpatient shift-change replay for the Meta Global AI Developer 
 
 **Synthetic data. Not for clinical use. Not HIPAA-certified.**
 
-Public source: https://github.com/DEX-XL/patient-operations-record . Working keyless product: https://patient-operations-record.vercel.app . The November4 staff-workflow correction adds persistent handovers and department tasks; final video publication and submission remain in progress. This is a synthetic hackathon prototype. Current release operations are in BUILD_LOG.md.
+Public source: https://github.com/DEX-XL/patient-operations-record . Working keyless product: https://patient-operations-record.vercel.app . The November4 staff-workflow correction adds persistent handovers and department tasks. The revised three-minute demo is published at https://www.youtube.com/watch?v=_NCrxfjX6f8; The native X demo is published at https://x.com/rohitmotwani123/status/2118101371065078089; final competition submission awaits review approval. This is a synthetic hackathon prototype. Current release operations are in BUILD_LOG.md.
 
 ## Current build
 
@@ -37,6 +37,10 @@ For keyless playback after building: `pnpm demo --port 4393 --hostname 127.0.0.1
 The package scripts disable Next's automatic dotenv loading and guard dotenv file reads, including in child workers. **Do not invoke Next directly or load `.env.local`.** Explicit process environment supplies database settings. Local storage defaults to the ignored `data/patient-ops.db`. No database account, hosting subscription or deployment is required locally.
 
 ## Try the demonstration
+
+**[Watch the revised three-minute demo (v2, 2:59)](https://www.youtube.com/watch?v=_NCrxfjX6f8)**. It uses actual edited prototype captures and stills with local synthetic narration. Read the visible LIVE/RECORDED mode labels; the hosted product is keyless recorded playback.
+
+**[Watch the 90-second native X demo](https://x.com/rohitmotwani123/status/2118101371065078089)**. It shows the revised synthetic workflow; the post uses the Made with AI label. Public playback is genuine recorded Meta output, and the project has no hospital-system integration.
 
 1. Open the patient board and select **Try the handover example**. It loads the synthetic P201 night handover without making a model call.
 2. Read the latest handover, then select **Review handover**. In RECORDED META this uses a genuine, context-matched capture.
@@ -82,6 +86,10 @@ Before held-out exposure, [the registered evaluation protocol](docs/EVAL_PROTOCO
 
 This is a hackathon demonstration, not hospital integration software. A production path would require hospital-approved source interfaces and identity/access controls, a validated workflow design and appropriately hosted models inside the hospital's privacy boundary. Those integrations and certifications are not present here.
 
-The source manifest was locked before held-out access; its actual timestamp is recorded above. The public product now runs on Vercel Hobby and Turso Starter with live inference disabled. Twenty acceptance checks passed against the hosted database, separate from earlier fresh-clone checks. The final delivery adapter passed 197 tests, typecheck, production build, bundle/boundary scans and frozen-source verification. Original raw dataset hashes are preserved through Git checkout/archive. Final video publication and the competition submission are still in progress; no receipt is claimed. See [public delivery status](docs/PUBLIC_DELIVERY.md), [the earlier final candidate evidence](docs/FINAL_DELIVERY_CHECK.md), [replay verification](docs/DELIVERY_CHECK.md), [hosting configuration](docs/DEPLOYMENT_PREP.md) and [the demo runbook](docs/DEMO_RUNBOOK.md).
+The source manifest was locked before held-out access; its actual timestamp is recorded above. The corrected product runs on Vercel Hobby and Turso Starter with public live inference disabled. Release ea5ca73 passed 263 tests across 25 files, typecheck, production build, bundle/boundary checks and unchanged frozen-source verification. The new isolated staff workflow passed 33 assertions across 58 HTTP requests; the earlier 20 hosted replay checks remain separate historical evidence. Original raw dataset hashes are preserved. The revised three-minute v2 video is published at https://www.youtube.com/watch?v=_NCrxfjX6f8. The native X demo is published at https://x.com/rohitmotwani123/status/2118101371065078089; final competition submission awaits review approval, and no receipt is claimed. See [public delivery status](docs/PUBLIC_DELIVERY.md), [the earlier final candidate evidence](docs/FINAL_DELIVERY_CHECK.md), [replay verification](docs/DELIVERY_CHECK.md), [hosting configuration](docs/DEPLOYMENT_PREP.md) and [the demo runbook](docs/DEMO_RUNBOOK.md).
 
 The approved specification lives in the parent `HANDOFF_TO_CODEX.md`, then `research/DESIGN_C.md`. Current implementation evidence and remaining gates are in `BUILD_LOG.md`.
+
+## License
+
+The project's original code is licensed under the [MIT License](LICENSE), copyright (c) 2026 Rohit Motwani. Third-party components retain their own licenses.
