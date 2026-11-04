@@ -6,73 +6,177 @@
       "id": "b7-H-A1-1",
       "scenarioId": "H-A1",
       "repetition": 1,
-      "status": "pending_funding"
+      "status": "exhausted",
+      "responseIds": [
+        "resp_6aeb74ac173d6832ead544a7",
+        "resp_6aeb74af3478588cb9804a68",
+        "resp_6aeb74b105300c02d5524ba8",
+        "resp_6aeb74b2af925b72b71a45fe",
+        "resp_6aeb74b5d9f43a2ead2540c3",
+        "resp_6aeb74c4f45b6b4c04cd4674"
+      ]
     },
     {
       "id": "b7-H-A1-2",
       "scenarioId": "H-A1",
       "repetition": 2,
-      "status": "pending_funding"
+      "status": "exhausted",
+      "responseIds": [
+        "resp_6aeb74c95bcfc554fa694b47",
+        "resp_6aeb74d214e9c35e0bb543b5",
+        "resp_6aeb74d44a47f295f64546a9",
+        "resp_6aeb74d57e54e8b2eba84ce8",
+        "resp_6aeb74dd108a975cd4b948d9",
+        "resp_6aeb74e6803e7aa0ccd24256"
+      ]
     },
     {
       "id": "b7-H-A1-3",
       "scenarioId": "H-A1",
       "repetition": 3,
-      "status": "pending_funding"
+      "status": "staged",
+      "responseIds": [
+        "resp_6aeb74e8d61946f0637345b8",
+        "resp_6aeb74e9adbb84c0c68743d6",
+        "resp_6aeb74eac8e92c9388cd4fb0",
+        "resp_6aeb74eb85b65d6093e84da4",
+        "resp_6aeb74f7275717bb2e76483e",
+        "resp_6aeb74fd32f70084c2904871"
+      ]
     },
     {
       "id": "b7-H-A2-1",
       "scenarioId": "H-A2",
       "repetition": 1,
-      "status": "pending_funding"
+      "status": "failed",
+      "errorCode": "REQUEST_CONTEXT_BOUND_EXCEEDED",
+      "responseIds": [
+        "resp_6aeb7501c8be17d5a95b467a",
+        "resp_6aeb75032880d0bcc6ea4476",
+        "resp_6aeb750d95a001de089a4d9a",
+        "resp_6aeb7518d213bf5eb838436a",
+        "resp_6aeb7527acd805946f194f18"
+      ],
+      "reconciliation": {
+        "at": "2026-11-04T18:12:43.326Z",
+        "result": "terminal_failure_no_retry",
+        "reason": "Sixth request was rejected by frozen agentRequest body-size bound before transport/reservation. Five prior receipts match five settled ledger entries; no reserved/uncertain entry or sixth request. Preserve failure and proceed only to distinct registered trials.",
+        "settledRequests": 5,
+        "requestRetried": false
+      }
     },
     {
       "id": "b7-H-A2-2",
       "scenarioId": "H-A2",
       "repetition": 2,
-      "status": "pending_funding"
+      "status": "exhausted",
+      "responseIds": [
+        "resp_6aeb75a0d037115e3f02485e",
+        "resp_6aeb75a22d4334cdf6e84ff7",
+        "resp_6aeb75a438dc79e762824303",
+        "resp_6aeb75a5b92521970c1f4bf3",
+        "resp_6aeb75a67ae25872c63f4bad",
+        "resp_6aeb75b38a18434a4cfa4fa4"
+      ]
     },
     {
       "id": "b7-H-A2-3",
       "scenarioId": "H-A2",
       "repetition": 3,
-      "status": "pending_funding"
+      "status": "failed",
+      "errorCode": "REQUEST_CONTEXT_BOUND_EXCEEDED",
+      "responseIds": [
+        "resp_6aeb75b653921323f2974c7f",
+        "resp_6aeb75b754c99d92abf64b09",
+        "resp_6aeb75c0034035b02b194736",
+        "resp_6aeb75cf63d87876ec3941a3",
+        "resp_6aeb75d650448a546fca45f9"
+      ],
+      "reconciliation": {
+        "at": "2026-11-04T18:18:43.252Z",
+        "result": "terminal_failure_no_retry",
+        "reason": "Next request was rejected by frozen agentRequest body-size bound before transport/reservation. All prior receipts match settled ledger entries; no reserved/uncertain entry or unsent-next-request reservation. Preserve failure and proceed only to distinct registered trials.",
+        "settledRequests": 5,
+        "requestRetried": false
+      }
     },
     {
       "id": "b7-H-P1-1",
       "scenarioId": "H-P1",
       "repetition": 1,
-      "status": "pending_funding"
+      "status": "staged",
+      "responseIds": [
+        "resp_6aeb770883b647475a8e488b",
+        "resp_6aeb7715cae5a2abe8fc4009",
+        "resp_6aeb771b9613ab1115834bb2",
+        "resp_6aeb772405ef3895ae224eb0"
+      ]
     },
     {
       "id": "b7-H-P1-2",
       "scenarioId": "H-P1",
       "repetition": 2,
-      "status": "pending_funding"
+      "status": "exhausted",
+      "responseIds": [
+        "resp_6aeb77261f9a8da0981d4a9d",
+        "resp_6aeb77278acd655810a646c6",
+        "resp_6aeb772c989c0defa9a84490",
+        "resp_6aeb773038314d42e2f74c3b",
+        "resp_6aeb77393da69d0d51fb4722",
+        "resp_6aeb773effbb12b596114a41"
+      ]
     },
     {
       "id": "b7-H-P1-3",
       "scenarioId": "H-P1",
       "repetition": 3,
-      "status": "pending_funding"
+      "status": "staged",
+      "responseIds": [
+        "resp_6aeb7740e442cf18902f417c",
+        "resp_6aeb7741f813c538499c45b5",
+        "resp_6aeb77458c9afa01c08044d7",
+        "resp_6aeb7747a4ff1c92c32648f6",
+        "resp_6aeb775797af3836689d44a0",
+        "resp_6aeb7764c8f710be524445e3"
+      ]
     },
     {
       "id": "b7-H-P2-1",
       "scenarioId": "H-P2",
       "repetition": 1,
-      "status": "pending_funding"
+      "status": "staged",
+      "responseIds": [
+        "resp_6aeb77677425c936a4df4d1c",
+        "resp_6aeb776b43f680891bb34903",
+        "resp_6aeb776d2c310fb1b5284870",
+        "resp_6aeb776e57560c17c6a943d5",
+        "resp_6aeb777a24f5580a6a2e44ea",
+        "resp_6aeb778511788976540e4f46"
+      ]
     },
     {
       "id": "b7-H-P2-2",
       "scenarioId": "H-P2",
       "repetition": 2,
-      "status": "pending_funding"
+      "status": "staged",
+      "responseIds": [
+        "resp_6aeb77883347d8f7ad2d4074",
+        "resp_6aeb778a52edb7d0f05c4ec3",
+        "resp_6aeb779556dbcfca99b14240",
+        "resp_6aeb779c63a775e0d9fd4dcf",
+        "resp_6aeb77a0e0825b44047045d8"
+      ]
     },
     {
       "id": "b7-H-P2-3",
       "scenarioId": "H-P2",
       "repetition": 3,
-      "status": "pending_funding"
+      "status": "staged",
+      "responseIds": [
+        "resp_6aeb77a4ac6c4b24f4dd4f7f",
+        "resp_6aeb77b104d769a50920408a",
+        "resp_6aeb77bc4e928f1c73824f3d"
+      ]
     }
   ]
 }

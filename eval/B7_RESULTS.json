@@ -1,0 +1,313 @@
+{
+  "generatedAt": "2026-11-04T18:24:20.215924+00:00",
+  "sourceDigest": "6fb8d7053d78502857a392b048d7b76a4dc23047baff37c897b92b971eba4daf",
+  "registeredTrials": 12,
+  "terminalTrials": 12,
+  "outcomes": {
+    "exhausted": 4,
+    "staged": 6,
+    "failed": 2
+  },
+  "settledModelRequests": 64,
+  "costMicrousd": 581462,
+  "usage": {
+    "inputTokens": 345279,
+    "outputTokens": 35257
+  },
+  "officialMetrics": null,
+  "scoringStatus": "incompatible_scoring_contract",
+  "safetyAdjudication": "Unadjudicated; no zero-violation or clinical-safety claim",
+  "trialReplacements": 0,
+  "retriedFailedTrials": 0,
+  "stageMeaning": "A human-review batch was staged under frozen validator; not accepted work, gold accuracy or clinical success.",
+  "trials": [
+    {
+      "id": "b7-H-A1-1",
+      "scenarioId": "H-A1",
+      "repetition": 1,
+      "status": "exhausted",
+      "errorCode": null,
+      "protocolRequests": 6,
+      "settledResponses": 6,
+      "costMicrousd": 36670,
+      "latencyMs": 26709.9242,
+      "usage": {
+        "inputTokens": 23820,
+        "outputTokens": 1622
+      },
+      "responseIds": [
+        "resp_6aeb74ac173d6832ead544a7",
+        "resp_6aeb74af3478588cb9804a68",
+        "resp_6aeb74b105300c02d5524ba8",
+        "resp_6aeb74b2af925b72b71a45fe",
+        "resp_6aeb74b5d9f43a2ead2540c3",
+        "resp_6aeb74c4f45b6b4c04cd4674"
+      ]
+    },
+    {
+      "id": "b7-H-A1-2",
+      "scenarioId": "H-A1",
+      "repetition": 2,
+      "status": "exhausted",
+      "errorCode": null,
+      "protocolRequests": 6,
+      "settledResponses": 6,
+      "costMicrousd": 62927,
+      "latencyMs": 34029.14,
+      "usage": {
+        "inputTokens": 40011,
+        "outputTokens": 3038
+      },
+      "responseIds": [
+        "resp_6aeb74c95bcfc554fa694b47",
+        "resp_6aeb74d214e9c35e0bb543b5",
+        "resp_6aeb74d44a47f295f64546a9",
+        "resp_6aeb74d57e54e8b2eba84ce8",
+        "resp_6aeb74dd108a975cd4b948d9",
+        "resp_6aeb74e6803e7aa0ccd24256"
+      ]
+    },
+    {
+      "id": "b7-H-A1-3",
+      "scenarioId": "H-A1",
+      "repetition": 3,
+      "status": "staged",
+      "errorCode": null,
+      "protocolRequests": 6,
+      "settledResponses": 6,
+      "costMicrousd": 46360,
+      "latencyMs": 22827.9838,
+      "usage": {
+        "inputTokens": 29422,
+        "outputTokens": 2254
+      },
+      "responseIds": [
+        "resp_6aeb74e8d61946f0637345b8",
+        "resp_6aeb74e9adbb84c0c68743d6",
+        "resp_6aeb74eac8e92c9388cd4fb0",
+        "resp_6aeb74eb85b65d6093e84da4",
+        "resp_6aeb74f7275717bb2e76483e",
+        "resp_6aeb74fd32f70084c2904871"
+      ]
+    },
+    {
+      "id": "b7-H-A2-1",
+      "scenarioId": "H-A2",
+      "repetition": 1,
+      "status": "failed",
+      "errorCode": "REQUEST_CONTEXT_BOUND_EXCEEDED",
+      "protocolRequests": 5,
+      "settledResponses": 5,
+      "costMicrousd": 51221,
+      "latencyMs": 42415.0736,
+      "usage": {
+        "inputTokens": 26407,
+        "outputTokens": 4285
+      },
+      "responseIds": [
+        "resp_6aeb7501c8be17d5a95b467a",
+        "resp_6aeb75032880d0bcc6ea4476",
+        "resp_6aeb750d95a001de089a4d9a",
+        "resp_6aeb7518d213bf5eb838436a",
+        "resp_6aeb7527acd805946f194f18"
+      ]
+    },
+    {
+      "id": "b7-H-A2-2",
+      "scenarioId": "H-A2",
+      "repetition": 2,
+      "status": "exhausted",
+      "errorCode": null,
+      "protocolRequests": 6,
+      "settledResponses": 6,
+      "costMicrousd": 40079,
+      "latencyMs": 21263.779599999998,
+      "usage": {
+        "inputTokens": 25476,
+        "outputTokens": 1937
+      },
+      "responseIds": [
+        "resp_6aeb75a0d037115e3f02485e",
+        "resp_6aeb75a22d4334cdf6e84ff7",
+        "resp_6aeb75a438dc79e762824303",
+        "resp_6aeb75a5b92521970c1f4bf3",
+        "resp_6aeb75a67ae25872c63f4bad",
+        "resp_6aeb75b38a18434a4cfa4fa4"
+      ]
+    },
+    {
+      "id": "b7-H-A2-3",
+      "scenarioId": "H-A2",
+      "repetition": 3,
+      "status": "failed",
+      "errorCode": "REQUEST_CONTEXT_BOUND_EXCEEDED",
+      "protocolRequests": 5,
+      "settledResponses": 5,
+      "costMicrousd": 52559,
+      "latencyMs": 34515.264599999995,
+      "usage": {
+        "inputTokens": 29024,
+        "outputTokens": 3830
+      },
+      "responseIds": [
+        "resp_6aeb75b653921323f2974c7f",
+        "resp_6aeb75b754c99d92abf64b09",
+        "resp_6aeb75c0034035b02b194736",
+        "resp_6aeb75cf63d87876ec3941a3",
+        "resp_6aeb75d650448a546fca45f9"
+      ]
+    },
+    {
+      "id": "b7-H-P1-1",
+      "scenarioId": "H-P1",
+      "repetition": 1,
+      "status": "staged",
+      "errorCode": null,
+      "protocolRequests": 4,
+      "settledResponses": 4,
+      "costMicrousd": 43680,
+      "latencyMs": 31022.5189,
+      "usage": {
+        "inputTokens": 23553,
+        "outputTokens": 3350
+      },
+      "responseIds": [
+        "resp_6aeb770883b647475a8e488b",
+        "resp_6aeb7715cae5a2abe8fc4009",
+        "resp_6aeb771b9613ab1115834bb2",
+        "resp_6aeb772405ef3895ae224eb0"
+      ]
+    },
+    {
+      "id": "b7-H-P1-2",
+      "scenarioId": "H-P1",
+      "repetition": 2,
+      "status": "exhausted",
+      "errorCode": null,
+      "protocolRequests": 6,
+      "settledResponses": 6,
+      "costMicrousd": 54583,
+      "latencyMs": 25983.831899999997,
+      "usage": {
+        "inputTokens": 34376,
+        "outputTokens": 2732
+      },
+      "responseIds": [
+        "resp_6aeb77261f9a8da0981d4a9d",
+        "resp_6aeb77278acd655810a646c6",
+        "resp_6aeb772c989c0defa9a84490",
+        "resp_6aeb773038314d42e2f74c3b",
+        "resp_6aeb77393da69d0d51fb4722",
+        "resp_6aeb773effbb12b596114a41"
+      ]
+    },
+    {
+      "id": "b7-H-P1-3",
+      "scenarioId": "H-P1",
+      "repetition": 3,
+      "status": "staged",
+      "errorCode": null,
+      "protocolRequests": 6,
+      "settledResponses": 6,
+      "costMicrousd": 58430,
+      "latencyMs": 38226.922999999995,
+      "usage": {
+        "inputTokens": 33825,
+        "outputTokens": 3799
+      },
+      "responseIds": [
+        "resp_6aeb7740e442cf18902f417c",
+        "resp_6aeb7741f813c538499c45b5",
+        "resp_6aeb77458c9afa01c08044d7",
+        "resp_6aeb7747a4ff1c92c32648f6",
+        "resp_6aeb775797af3836689d44a0",
+        "resp_6aeb7764c8f710be524445e3"
+      ]
+    },
+    {
+      "id": "b7-H-P2-1",
+      "scenarioId": "H-P2",
+      "repetition": 1,
+      "status": "staged",
+      "errorCode": null,
+      "protocolRequests": 6,
+      "settledResponses": 6,
+      "costMicrousd": 54780,
+      "latencyMs": 32479.2126,
+      "usage": {
+        "inputTokens": 34578,
+        "outputTokens": 2719
+      },
+      "responseIds": [
+        "resp_6aeb77677425c936a4df4d1c",
+        "resp_6aeb776b43f680891bb34903",
+        "resp_6aeb776d2c310fb1b5284870",
+        "resp_6aeb776e57560c17c6a943d5",
+        "resp_6aeb777a24f5580a6a2e44ea",
+        "resp_6aeb778511788976540e4f46"
+      ]
+    },
+    {
+      "id": "b7-H-P2-2",
+      "scenarioId": "H-P2",
+      "repetition": 2,
+      "status": "staged",
+      "errorCode": null,
+      "protocolRequests": 5,
+      "settledResponses": 5,
+      "costMicrousd": 48978,
+      "latencyMs": 26907.386500000008,
+      "usage": {
+        "inputTokens": 29971,
+        "outputTokens": 2709
+      },
+      "responseIds": [
+        "resp_6aeb77883347d8f7ad2d4074",
+        "resp_6aeb778a52edb7d0f05c4ec3",
+        "resp_6aeb779556dbcfca99b14240",
+        "resp_6aeb779c63a775e0d9fd4dcf",
+        "resp_6aeb77a0e0825b44047045d8"
+      ]
+    },
+    {
+      "id": "b7-H-P2-3",
+      "scenarioId": "H-P2",
+      "repetition": 3,
+      "status": "staged",
+      "errorCode": null,
+      "protocolRequests": 3,
+      "settledResponses": 3,
+      "costMicrousd": 31195,
+      "latencyMs": 28617.601600000024,
+      "usage": {
+        "inputTokens": 14816,
+        "outputTokens": 2982
+      },
+      "responseIds": [
+        "resp_6aeb77a4ac6c4b24f4dd4f7f",
+        "resp_6aeb77b104d769a50920408a",
+        "resp_6aeb77bc4e928f1c73824f3d"
+      ]
+    }
+  ],
+  "ledger": [
+    {
+      "bucket": "heldoutEval",
+      "state": "settled",
+      "requests": 64,
+      "costMicrousd": 581462
+    },
+    {
+      "bucket": "museBuild",
+      "state": "settled",
+      "requests": 2,
+      "costMicrousd": 77225
+    },
+    {
+      "bucket": "runtimeDev",
+      "state": "settled",
+      "requests": 20,
+      "costMicrousd": 120788
+    }
+  ]
+}

@@ -1,5 +1,11 @@
 # Build log
 
+## November4 — all twelve registered Meta evaluation trials reached terminal outcomes
+
+All12fixed raw trials are now recorded:6staged human-review batches,4exhausted runs,2terminal REQUEST_CONTEXT_BOUND_EXCEEDED failures.64provider requests settled;345279input/35257output tokens;$0.581462tracked inside heldoutEval10USD. No failed trial was retried/replaced. H-A2-1/3 each hit the frozen body bound before the next request after5settled responses; receipts/ledger reconciled with no ambiguous reservation, then only distinct remaining registered trials continued. No context-bound increase, prompt/rule/template/scorer change or gold remapping occurred. EVAL.md and eval/B7_RESULTS.md/json publish every outcome; staging is not accuracy, human acceptance or clinical success. Official comparison metrics remain unavailable.
+
+Post-evaluation main ledger:86settled requests,$0.779475tracked (Muse0.077225/dev0.120788/eval0.581462/public0),0reserved/uncertain;30USD reserve untouched. Future live-video spend is separately publicDemo. The free VercelHobby project and TursoStarter0USD/month synthetic database were provisioned with explicit user approval of new integration terms; DATABASE-prefixed private environment connection was selected. Deployment/remote checks still need completion; no final hosted/video/X/submission URL or receipt is invented.
+
 ## November4 — authorized final release and actual B7 trials
 
 Rohit directly instructed completion, public submission, an X demo post and all associated delivery. He renewed his statement that150USD Meta credits are available. Existing two-hour human-evidence rule was applied at2026-11-04T18:05:05Z, without inventing expiry. Current official Standard Spark pricing was rechecked; the signed-in dashboard22requests matched the22settled local ledger, with0reserved/uncertain and no observed additional usage. Existing bucket caps and30USD reserve remain unchanged. No smoke permission was repeated.
