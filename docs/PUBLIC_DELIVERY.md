@@ -1,23 +1,21 @@
-# Current public delivery status — November4
+# Current public delivery status — November4, v3
 
 - Product: https://patient-operations-record.vercel.app
-- Source: https://github.com/DEX-XL/patient-operations-record
-- Revised competition video **v2**: https://www.youtube.com/watch?v=_NCrxfjX6f8 — published and checked without sign-in, 179.02 seconds. Actual edited app captures/stills with local synthetic narration; live-source and recorded modes are visibly distinguished.
-- Runtime release **ea5ca73** is deployed and its independent CI passed.
-- Hosting: Vercel Hobby + Turso Starter, free; public keyless RECORDED META. Three genuine captured runs are used; changed staff notes cannot silently reuse a different recording.
-- Corrected workflow: patient-first board, persistent unsigned synthetic handovers, source-linked human task proposals, assigned department owners, optional prerequisites, exact-batch acceptance and separate permitted human completion. Ten demo personas are not hospital authentication.
-- Latest release verification: **263 tests in25files**, typecheck, production build, all seven database-route bundles, boundary and unchanged frozen-algorithm checks passed.
-- New isolated staff-workflow HTTP verification: **33 assertions across58requests**, including persistence, rejection paths, assigned Pharmacy follow-through and zero-inference keyless operation. Earlier20hosted replay checks remain separate historical evidence; these scopes are not interchangeable.
-- Fresh private LIVE proof a743cfe7-8243-4bee-8825-797a23c4af39 used newly typed handover context,5requests/5functions,17906input/2730output,$0.033987; Meta cited the source and proposed a ride task. Parent verified ChargeRN acceptance and Case-management work.
-- Latest reconciled model ledger: **95settled / $0.901493**,0reserved/uncertain. Musecoding0.147216/runtimeDev0.154775/heldoutEval0.581462/publicDemo0.018040. Reserve30untouched. Conservative local token costs, not a freshly queried provider bill or grant balance.
-- Original12held-out trials remain6staged/4exhausted/2context-bound failures, plus4rules baselines. Official comparison metrics are unavailable because the frozen scorer does not match untouched gold. Later workflow extensions do not repair or inherit validation from that result.
-- No real patient data, clinical advice, clinical orders, final EHR notes, hospital SSO or real hospital-system integration. No clinical-benefit, accuracy or time-saving claim.
+- MIT-licensed source: https://github.com/DEX-XL/patient-operations-record
+- Current competition video **v3**: https://www.youtube.com/watch?v=nzKb5DuErFw — **143.68 seconds / 2:23**. Published Public in Studio; signed-in owner watch-page title and displayed captions verified. Anonymous v3 playback not separately observed. Full local browser playback finished at 1x, ended=true, no error.
+- Updated native X demo **v3**: https://x.com/rohitmotwani123/status/2118141184791224583 — **117.8 seconds**, owner article/video verified; Made with AI selected. Use this new URL in the viral entry.
+- Revised 359-word presentation uses actual edited app captures/stills, narrated with ElevenLabs stock Roger (Eleven v4) at 1x. Synthetic narration, not a Rohit voice clone.2258 existing ElevenLabs credits used, separate from Meta; no purchase.
+- Public keyless demo uses genuine RECORDED META output. The new-note footage separately captures genuine private LIVE inference. Pharmacy completion is a separate staff-task example; the ride task is not shown completed.
+- Runtime **ea5ca73** remains the verified deployed behavior; docs/MIT release **1084c8b** passed CI. This video/docs update changes no runtime/frozen algorithm. Hosting remains Vercel Hobby + Turso Starter free.
+- Corrected workflow: persistent unsigned synthetic handovers, source-linked proposals, named department owners, optional prerequisites, exact-batch human acceptance and separately permitted human completion. Ten demo personas are not hospital authentication.
+- **263 tests / 25 files**, typecheck, production build, seven database-route bundles, boundary and frozen-algorithm checks passed. New local isolated staff workflow: **33 assertions / 58 HTTP requests**. Earlier20hosted replay checks and later16read-only hosted assertions are separate scopes.
+- New private LIVE run a743cfe7-8243-4bee-8825-797a23c4af39 used newly typed handover context:5requests/5functions,17906input/2730output,$0.033987. Meta cited the source and proposed a ride task; nurse acceptance and Case-management receipt were observed.
+- Meta ledger unchanged: **95settled /$0.901493**,0reserved/uncertain; Muse0.147216 / runtimeDev0.154775 / heldoutEval0.581462 / publicDemo0.018040. Reserve30untouched. Conservative local token estimates, not a fresh provider bill/balance.
+- Original12fixed trials:6staged /4exhausted /2context-bound failures, plus4rules baselines. Official metrics unavailable because the frozen scorer and untouched gold contracts do not match. Later workflow extensions are prospective, separately verified.
+- Synthetic only; no hospital/EHR/SSO connection, clinical orders, final EHR notes or clinical advice. No clinical-benefit, accuracy, time-saving or HIPAA-certification claim.
 
-The revised YouTube v2 publication is verified at the actual URL above. The 90-second X v2 publication is verified at https://x.com/rohitmotwani123/status/2118101371065078089; no competition receipt is claimed. Do not substitute v1/review media for the corrected v2 assets. Rohit must review the corrected build and give a new explicit final-submit approval. His prior specific YouTube/materials/rules permissions are already fulfilled and should not be asked again.
+Rohit gave **conditional final-submit approval**: revise the script/voice, change YouTube, then submit. Once the v3 revision and actual form URLs pass verification, no further approval question is required. Final receipt is not claimed in this update. Fulfilled YouTube/materials/rules/waiver/MIT permissions remain valid.
 
-The public unit is shared synthetic state. Rohit explicitly approved the MIT license, and the standard LICENSE with copyright (c) 2026 Rohit Motwani is now applied in both source checkouts. The earlier public revision ea5ca73 had no license and GitHub reported license:null; that is historical evidence. The approved MIT LICENSE is included in this documentation-and-license release; commit/push evidence records its publication. The license decision is resolved; final competition submission still requires Rohit's separate new approval after review. Third-party components retain their own licenses.
+Historical v2 video: https://www.youtube.com/watch?v=_NCrxfjX6f8 (179seconds); historical X: https://x.com/rohitmotwani123/status/2118101371065078089 (90seconds). Preserved as build history, not current submission media.
 
-Licensing distinction reference: [GitHub documentation on licensing public repositories](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository).
-
-
-Current revised X demo: https://x.com/rohitmotwani123/status/2118101371065078089 — native 90.021333-second video, published and checked on the owner account. Made with AI was selected; on-screen labels remain, while an optional separate SRT file was not attached. No final submission is claimed.
+MIT LICENSE copyright (c) 2026 Rohit Motwani was publicly verified in 1084c8b. Third-party components retain their own licenses.
